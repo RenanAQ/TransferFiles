@@ -72,51 +72,37 @@ namespace seneca {
       return m_CUR_YEAR;
    }
    std::istream& Date::read(std::istream& is) {
-       //Clears the error code by setting it NO_ERROR
-       m_ErrorCode = NO_ERROR;
-       // Read the year
-       is >> m_year;
-       // Ignore the next non-digit character (separator)
-       if (is.peek() < '0' || is.peek() > '9') {
-           is.ignore();
-       }
-       // Read the month
-       is >> m_mon;
-       // Ignore the next non-digit character (separator)
-       if (is.peek() < '0' || is.peek() > '9') {
-           is.ignore();
-       }
-       // Read the day
-       is >> m_day;
+    errCode(NO_ERROR);
+    char sep1, sep2;
+    is >> m_year >> sep1 >> m_mon >> sep2 >> m_day;
 
-       // Check if istream failed
-       if (is.fail()) {
-           m_ErrorCode = CIN_FAILED;
-           is.clear();
-       }
-       else {
-           // Validate the date values here
-           if (!validate()) {
-               // Set appropriate error code if validation fails
-           }
-       }
+    if (is.fail() || sep1 == '\n' || sep2 == '\n') {
+        errCode(CIN_FAILED);
+        is.clear();
+    } else {
+        if (m_year < MIN_YEAR || m_year > m_CUR_YEAR + 1) {
+            errCode(YEAR_ERROR);
+        } else if (m_mon < 1 || m_mon > 12) {
+            errCode(MON_ERROR);
+        } else if (m_day < 1 || m_day > mdays()) {
+            errCode(DAY_ERROR);
+        }
+    }
+    return is;
+}
 
-       // Flush the keyboard (ignore the rest of the input until a newline is encountered)
-       is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-       return is;
-
-   }
-   std::ostream& Date::write(std::ostream& os) const
-   {
-       os << m_year;
-       os << "/";
-       os << setfill('0') << setw(2) << m_mon;
-       os << "/";
-       os << setfill('0') << setw(2) << m_day;
-       return os;
-
-   }
+   std::ostream& Date::write(std::ostream& os) const {
+    if (bad()) {
+        os << dateStatus();
+    } else {
+        os << m_year << '/'
+           << setw(2) << setfill('0') << m_mon << '/'
+           << setw(2) << setfill('0') << m_day;
+        os << setfill(' ');
+    }
+    return os;
+}
    bool Date::operator==(const Date& other) const
    {
        return(this->daysSince0001_1_1() == other.daysSince0001_1_1());

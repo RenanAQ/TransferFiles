@@ -16,6 +16,7 @@ that my professor provided to complete my workshops and assignments.
 #ifndef SENECA_MENU_H__
 #define SENECA_MENU_H__
 #include <iostream>
+using namespace std;
 namespace seneca {
 	const unsigned int MAX_MENU_ITEM = 20;
 
@@ -32,7 +33,6 @@ namespace seneca {
 		void view(std::ostream& ostr)const;
 
 		friend class Menu;
-		friend std::ostream& operator<<(std::ostream os, const Menu& menu);
 	};
 	class Menu
 	{
@@ -56,7 +56,7 @@ namespace seneca {
 		operator bool()const;
 		const char* operator[](unsigned int index)const;
 
-		friend std::ostream& operator<<(std::ostream os, const Menu& menu);
+		friend ostream& operator<<(ostream& os, Menu& menu);
 	};
 }
 #endif

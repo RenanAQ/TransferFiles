@@ -16,6 +16,7 @@ that my professor provided to complete my workshops and assignments.
 #include "Menu.h"
 #include <cstring>
 #include <iostream>
+using namespace std;
 
 namespace seneca {
 	MenuItem::MenuItem(const char* m_value)
@@ -43,7 +44,7 @@ namespace seneca {
 	{
 		return m_value;
 	}
-	void MenuItem::view(std::ostream& ostr) const
+	void MenuItem::view(ostream& ostr) const
 	{
 		if (*this) {
 			ostr << m_value;
@@ -71,42 +72,42 @@ namespace seneca {
 			delete m_items[i];
 		}
 	}
-	void Menu::viewTitle(std::ostream& ostr) const
+	void Menu::viewTitle(ostream& ostr) const
 	{
 		if (m_title) {
 			m_title->view(ostr);
 		}
 	}
-	void Menu::displayMenu(std::ostream& ostr) const
+	void Menu::displayMenu(ostream& ostr) const
 	{
 		viewTitle(ostr);
 		if (m_title)
 		{
-			ostr << ":" << std::endl;
+			ostr << ":" << endl;
 		}
-		for (int i = 1; i < m_storedItems+1; i++)
+		for (unsigned int i = 0; i < m_storedItems; i++)
 		{
-			ostr << i << "- ";
+			ostr << i+1 << "- ";
 			m_items[i]->view(ostr);
-			ostr << std::endl;
+			ostr << endl;
 		}
-		ostr << "0-Exit" << std::endl << ">";
+		ostr << "0-Exit" << endl << ">";
 
 	}
 	unsigned int Menu::run()
 	{	
-		int a;
+		unsigned int a;
 		bool isValid = false;
 		
 		do
 		{	
-			displayMenu(std::cout);
-			std::cin >> a;
-			if (!(a >= 0 && a <= m_storedItems))
+			displayMenu(cout);
+			cin >> a;
+			if (a > m_storedItems)
 			{
-				std::cin.clear();
-				std::cin.ignore(10000, '\n');
-				std::cout << "Invalid Selection, try again: ";
+				cin.clear();
+				cin.ignore(10000, '\n');
+				cout << "Invalid Selection, try again: ";
 			}
 			else
 			{
@@ -145,11 +146,9 @@ namespace seneca {
 	{
 		return *m_items[index % m_storedItems];
 	}
-	std::ostream& operator<<(std::ostream os, const Menu& menu)
+	ostream& operator<<(ostream& os, Menu& menu)
 	{
-		if (menu.m_title) {
-			menu.m_title->view(os);
-		}
+		menu.viewTitle(os);
 		return os;
 	}
 }
