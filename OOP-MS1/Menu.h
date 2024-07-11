@@ -42,7 +42,7 @@ namespace seneca {
 
 	public:
 		Menu(const Menu&) = delete;
-		Menu& operator=(const Menu&) = delete;
+		Menu& operator=(const Menu& src);
 		Menu();
 		Menu(const char* name);
 		~Menu();

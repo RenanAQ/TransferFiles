@@ -14,6 +14,7 @@
 #include <ctime>
 using namespace std;
 #include "Date.h"
+#include <sstream> // Added for string stream due to error i was getting
 namespace seneca {
    bool Date::validate() {
       errCode(NO_ERROR);
@@ -72,24 +73,35 @@ namespace seneca {
       return m_CUR_YEAR;
    }
    std::istream& Date::read(std::istream& is) {
-    errCode(NO_ERROR);
-    char sep1, sep2;
-    is >> m_year >> sep1 >> m_mon >> sep2 >> m_day;
+       errCode(NO_ERROR);
+       std::string date_str;
+       is >> date_str;
 
-    if (is.fail() || sep1 == '\n' || sep2 == '\n') {
-        errCode(CIN_FAILED);
-        is.clear();
-    } else {
-        if (m_year < MIN_YEAR || m_year > m_CUR_YEAR + 1) {
-            errCode(YEAR_ERROR);
-        } else if (m_mon < 1 || m_mon > 12) {
-            errCode(MON_ERROR);
-        } else if (m_day < 1 || m_day > mdays()) {
-            errCode(DAY_ERROR);
-        }
-    }
-    return is;
-}
+       //I had to use this so I can read the entire date as a string
+       // and then manually parse the components. 
+       std::istringstream date_stream(date_str);
+       char sep1, sep2;
+       date_stream >> m_year >> sep1 >> m_mon >> sep2 >> m_day;
+
+       if (date_stream.fail() || isdigit(sep1) || isdigit(sep2)) {
+           errCode(CIN_FAILED);
+           is.clear();
+       }
+       else {
+           if (m_year < MIN_YEAR || m_year > m_CUR_YEAR + 1) {
+               errCode(YEAR_ERROR);
+           }
+           else if (m_mon < 1 || m_mon > 12) {
+               errCode(MON_ERROR);
+           }
+           else if (m_day < 1 || m_day > mdays()) {
+               errCode(DAY_ERROR);
+           }
+       }
+
+       is.ignore(1000, '\n');
+       return is;
+   }
 
 
    std::ostream& Date::write(std::ostream& os) const {

@@ -3,7 +3,7 @@
 // File	Utils.cpp
 // Version
 // Date
-// Author
+// Author: Renan
 // Description
 //
 // Revision History
@@ -14,7 +14,8 @@
 ***********************************************************************/
 
 #include "Utils.h"
-namespace seneca {
 
+namespace seneca {
+    
 
 }
