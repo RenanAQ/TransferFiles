@@ -1,0 +1,16 @@
+
+Student: Renan de Alencar Queiroz
+ID: 129280236
+Email: rde-alencar-queiroz@myseneca.ca
+Date: 2024-07-11
+
+In workshop 07, OOP concepts are utilized to create a structured and modular design for handling vehicles. 
+The primary OOP concepts demonstrated here include class inheritance and encapsulation.
+Inheritance is a concept where a class (derived class) inherits attributes and methods from another class (base class). 
+In this workshop, the Truck class inherits from the MotorVehicle class. This means Truck inherits all the attributes 
+(like license plate, address, and year built) and methods (such as moveTo, write, and read) of MotorVehicle. 
+This promotes code reuse and logical organization. Truck can add new attributes (like capacity and cargo load) and methods (like addCargo and unloadCargo) 
+while still using or overriding methods from MotorVehicle.
+We also had encapsulation, which involves bundling data (attributes) and methods (functions) that operate on the data into a single unit, or class. 
+Each class keeps its data members private or protected, exposing only necessary methods publicly. 
+This is evident as both MotorVehicle and Truck have private attributes and public methods, controlling how the data is accessed and modified.
