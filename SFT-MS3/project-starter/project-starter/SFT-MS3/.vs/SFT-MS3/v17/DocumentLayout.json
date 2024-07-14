@@ -3,10 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\SFT-MS3\\project-starter\\project-starter\\SFT-MS3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9C40DD6A-0A23-4DD3-AC28-C922BA7CA2CF}|SFT-MS3.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\SFT-MS3\\project-starter\\project-starter\\mapping.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{9C40DD6A-0A23-4DD3-AC28-C922BA7CA2CF}|SFT-MS3.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\SFT-MS3\\project-starter\\project-starter\\mapping.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C40DD6A-0A23-4DD3-AC28-C922BA7CA2CF}|SFT-MS3.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\SFT-MS3\\project-starter\\project-starter\\mapping.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{9C40DD6A-0A23-4DD3-AC28-C922BA7CA2CF}|SFT-MS3.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\SFT-MS3\\project-starter\\project-starter\\mapping.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9C40DD6A-0A23-4DD3-AC28-C922BA7CA2CF}|SFT-MS3.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\SFT-MS3\\project-starter\\project-starter\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
@@ -31,7 +31,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "mapping.c",
               "DocumentMoniker": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\SFT-MS3\\project-starter\\project-starter\\mapping.c",
               "RelativeDocumentMoniker": "..\\mapping.c",
@@ -52,8 +52,7 @@
               "RelativeToolTip": "..\\main.c",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-07-14T15:23:53.982Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T15:23:53.982Z"
             },
             {
               "$type": "Document",
@@ -65,8 +64,7 @@
               "RelativeToolTip": "SFT-MS3.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-14T15:22:34.705Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-14T15:22:34.705Z"
             }
           ]
         },
@@ -76,7 +74,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "mapping.h",
               "DocumentMoniker": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\SFT-MS3\\project-starter\\project-starter\\mapping.h",
               "RelativeDocumentMoniker": "..\\mapping.h",
