@@ -35,5 +35,8 @@
     <ClInclude Include="..\mapping.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\management.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

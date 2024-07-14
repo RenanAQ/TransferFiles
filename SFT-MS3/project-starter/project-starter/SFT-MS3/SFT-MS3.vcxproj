@@ -77,6 +77,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\SFT-MS3\project-starter\project-starter;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -167,6 +168,7 @@
     <ClCompile Include="SFT-MS3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\management.h" />
     <ClInclude Include="..\mapping.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
