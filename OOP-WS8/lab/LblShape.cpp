@@ -15,7 +15,7 @@ seneca::LblShape::LblShape()
 seneca::LblShape::LblShape(const char* Cstring)
 {
     delete[] m_label;
-    m_label = new char[strlen(Cstring) + 1]; //Allocates memory large enough to hold the incoming Cstring
+    m_label = new char[std::strlen(Cstring) + 1]; //Allocates memory large enough to hold the incoming Cstring
     strcpy(m_label, Cstring); //copies the Cstring argument to the newly allocated memory.
 }
 

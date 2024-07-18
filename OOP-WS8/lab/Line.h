@@ -18,7 +18,7 @@ namespace seneca {
 		void getSpecs(std::istream&);
 		void draw(std::ostream&) const;
 	private:
-		int m_length;
+		int m_length = 0;
 	};
 
 }

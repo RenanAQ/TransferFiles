@@ -9,7 +9,7 @@ I have done all the coding by myself and only copied the code that my professor 
 #include "Line.h"
 seneca::Line::Line(): LblShape()
 {
-	m_length = 0;
+	//invoke the default constructor of the base class.
 }
 
 seneca::Line::Line(char* Cstring, int length): LblShape(Cstring)// Passes the Cstring to the constructor of the base class 

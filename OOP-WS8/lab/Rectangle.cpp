@@ -9,7 +9,7 @@ I have done all the coding by myself and only copied the code that my professor 
 #include "Rectangle.h"
 
 
-seneca::Rectangle::Rectangle() :m_height(0), m_width(0), LblShape()
+seneca::Rectangle::Rectangle() : LblShape()
 {
 	//invoke the default constructor of the base class.
 }
@@ -17,7 +17,7 @@ seneca::Rectangle::Rectangle() :m_height(0), m_width(0), LblShape()
 seneca::Rectangle::Rectangle(char* Cstring, int width, int height) : 
 	LblShape(Cstring), m_width(width), m_height(height)
 {
-	if (height < 3 || width < (strlen(Cstring) +2))
+	if (height < 3 || width < static_cast<int>(std::strlen(label()) +2)) //used static_cast to solve the problem: comparison between signed and unsigned integer expressions
 	{
 		//set the Rectangle to an empty state
 		m_width = 0;
@@ -35,7 +35,7 @@ void seneca::Rectangle::getSpecs(std::istream& is)
 	is.ignore(1000, '\n');
 }
 
-void seneca::Rectangle::draw(std::ostream& os)
+void seneca::Rectangle::draw(std::ostream& os) const
 {
 	if (label() != nullptr && m_width > 0 && m_height > 0)
 	{
