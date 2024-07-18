@@ -1,0 +1,17 @@
+﻿  LblShape.cpp
+  Line.cpp
+C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\OOP-WS8\lab\LblShape.cpp(19,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\OOP-WS8\lab\LblShape.cpp(30,10): error C2039: 'getline': is not a member of 'std'
+C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\OOP-WS8\lab\LblShape.cpp(30,10): error C3861: 'getline': identifier not found
+C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\OOP-WS8\lab\LblShape.cpp(33,10): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  main.cpp
+C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\OOP-WS8\lab\main.cpp(22,14): error C2259: 'seneca::Rectangle': cannot instantiate abstract class
+C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\OOP-WS8\lab\main.cpp(22,26): error C2259: 'seneca::Rectangle': cannot instantiate abstract class
+C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\OOP-WS8\lab\main.cpp(22,26): error C2665: 'seneca::Rectangle::Rectangle': no overloaded function could convert all the argument types
+C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\OOP-WS8\lab\main.cpp(24,22): error C2665: 'seneca::Line::Line': no overloaded function could convert all the argument types
+C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\OOP-WS8\lab\main.cpp(25,23): error C2259: 'seneca::Rectangle': cannot instantiate abstract class
+C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\OOP-WS8\lab\main.cpp(25,32): error C2665: 'seneca::Rectangle::Rectangle': no overloaded function could convert all the argument types
+C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\OOP-WS8\lab\main.cpp(64,21): error C2259: 'seneca::Rectangle': cannot instantiate abstract class
+  Rectangle.cpp
+  Shape.cpp
+  Generating Code...
