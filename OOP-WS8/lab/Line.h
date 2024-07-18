@@ -14,7 +14,7 @@ namespace seneca {
 	{
 	public:
 		Line();
-		Line(char*, int);
+		Line(const char*, int);
 		void getSpecs(std::istream&);
 		void draw(std::ostream&) const;
 	private:

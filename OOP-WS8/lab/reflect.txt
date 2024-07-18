@@ -1,0 +1,13 @@
+Student: Renan de Alencar Queiroz
+ID: 129280236
+email: rde-alencar-queiroz@myseneca.ca
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+
+In this workshop, Pure virtual functions are declared in header files as part of a class interface. 
+These functions are specified with the = 0 syntax, indicating that they have no implementation in the base class. 
+For instance, in the Shape.h file, I declared a pure virtual function like virtual void draw(std::ostream&) const = 0;.
+This makes Shape an abstract base class, which cannot be instantiated directly. 
+Instead, it serves as a template for derived classes, enforcing a common interface that all derived classes must implement.
+The difference between an abstract base class and a concrete class is also reflected in these files. 
+The abstract base class, defined in the header file, sets the structure and required functions but does not provide full implementations, thus cannot be instantiated. 
+In contrast, a concrete class like Rectangle or Line, defined in both header and source files, provides complete implementations for all its methods, allowing objects to be created from it.

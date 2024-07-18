@@ -9,12 +9,12 @@ I have done all the coding by myself and only copied the code that my professor 
 #include "Rectangle.h"
 
 
-seneca::Rectangle::Rectangle() : LblShape()
+seneca::Rectangle::Rectangle() : LblShape(), m_width(0), m_height(0)
 {
 	//invoke the default constructor of the base class.
 }
 
-seneca::Rectangle::Rectangle(char* Cstring, int width, int height) : 
+seneca::Rectangle::Rectangle(const char* Cstring, int width, int height) : 
 	LblShape(Cstring), m_width(width), m_height(height)
 {
 	if (height < 3 || width < static_cast<int>(std::strlen(label()) +2)) //used static_cast to solve the problem: comparison between signed and unsigned integer expressions
@@ -33,11 +33,15 @@ void seneca::Rectangle::getSpecs(std::istream& is)
 	char comma;
 	is >> m_width >> comma >> m_height;
 	is.ignore(1000, '\n');
+	if (m_height < 3 || m_width < static_cast<int>(std::strlen(label()) + 2)) {
+		m_width = 0;
+		m_height = 0;
+	}
 }
 
 void seneca::Rectangle::draw(std::ostream& os) const
 {
-	if (label() != nullptr && m_width > 0 && m_height > 0)
+	if (m_width > 0 && m_height > 0)
 	{
 		os << "+"; //start of the first line
 		for (int i = 0; i < (m_width - 2); i++)
@@ -48,16 +52,12 @@ void seneca::Rectangle::draw(std::ostream& os) const
 
 		//second line
 		os << "|";
-		os << os.width(m_width - 1);
-		os.setf(std::ios::left);
-		os << label() << "|" << std::endl;
+		os << std::left << std::setw(m_width - 2) << label() << '|' << std::endl;
 		
 		//next(m_height - 3) lines:
 		for (int i = 0; i < (m_height - 3); i++)
 		{
-			os << "|";
-			os.width(m_width - 1); 
-			os << ' ' << "|" << std::endl;
+			os << '|' << std::setw(m_width - 2) << ' ' << '|' << std::endl;
 		}
 		
 		//start of the last line
@@ -66,6 +66,7 @@ void seneca::Rectangle::draw(std::ostream& os) const
 		{
 			os << "-";//os.put('-');
 		}
-		os << "+" << std::endl; //end of the last line
+		os << "+";
+		//<< std::endl; //end of the last line
 	}
 }

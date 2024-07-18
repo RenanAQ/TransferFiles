@@ -53,4 +53,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="correct_output.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="student_output.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="reflect.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

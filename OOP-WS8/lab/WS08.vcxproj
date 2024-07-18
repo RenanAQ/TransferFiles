@@ -155,6 +155,11 @@
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Shape.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="correct_output.txt" />
+    <Text Include="reflect.txt" />
+    <Text Include="student_output.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

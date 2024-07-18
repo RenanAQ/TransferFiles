@@ -7,16 +7,14 @@ email: rde-alencar-queiroz@myseneca.ca
 I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
 */
 
-seneca::LblShape::LblShape()
-{
-    m_label = nullptr;
-}
+seneca::LblShape::LblShape() : m_label(nullptr) {}
 
-seneca::LblShape::LblShape(const char* Cstring)
+seneca::LblShape::LblShape(const char* Cstring) : m_label(nullptr)
 {
-    delete[] m_label;
-    m_label = new char[std::strlen(Cstring) + 1]; //Allocates memory large enough to hold the incoming Cstring
-    strcpy(m_label, Cstring); //copies the Cstring argument to the newly allocated memory.
+    if (Cstring) {
+        m_label = new char[std::strlen(Cstring) + 1];
+        std::strcpy(m_label, Cstring);
+    }
 }
 
 seneca::LblShape::~LblShape()

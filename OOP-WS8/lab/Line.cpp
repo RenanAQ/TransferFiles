@@ -7,15 +7,14 @@ email: rde-alencar-queiroz@myseneca.ca
 I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
 */
 #include "Line.h"
-seneca::Line::Line(): LblShape()
+seneca::Line::Line(): LblShape(), m_length(0)
 {
 	//invoke the default constructor of the base class.
 }
 
-seneca::Line::Line(char* Cstring, int length): LblShape(Cstring)// Passes the Cstring to the constructor of the base class 
+seneca::Line::Line(const char* Cstring, int length): LblShape(Cstring), m_length(length)
 {
- 
-	m_length = length;
+	// Passes the Cstring to the constructor of the base class
 }
 
 void seneca::Line::getSpecs(std::istream& in)
@@ -30,13 +29,13 @@ void seneca::Line::getSpecs(std::istream& in)
 
 void seneca::Line::draw(std::ostream& os) const
 {
-	if (m_length > 0 && label() != NULL)
+	if (m_length > 0 && label() != nullptr)
 	{
 		os << label() << std::endl; //first print the label()
 		for (int i = 0; i < m_length; i++) //printing the '=' to the value of the m_length member variable.
 		{
 			os << "="; //os.put('=');
 		}
-		os << std::endl;
+		//os << std::endl;
 	}
 }

@@ -15,7 +15,7 @@ namespace seneca
 	{
 	public:
 		Rectangle();
-		Rectangle(char *, int, int);
+		Rectangle(const char *, int, int);
 		void getSpecs(std::istream &);
 		void draw(std::ostream &) const;
 
