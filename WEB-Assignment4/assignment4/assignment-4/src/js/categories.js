@@ -15,5 +15,6 @@ window.categories = [
   {id: "Cat01", name: "Tennis Racquets"},
   {id: "Cat02", name: "Tennis Balls"},
   {id: "Cat03", name: "Shoes"},
-  {id: "Cat04", name: "Bags"}
+  {id: "Cat04", name: "Bags"},
+  {id: "Cat05", name: "Strings"}
 ];

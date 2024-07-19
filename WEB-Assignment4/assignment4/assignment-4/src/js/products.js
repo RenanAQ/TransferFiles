@@ -49,4 +49,9 @@ window.products = [
   {id: "Cat04-P6", title: "Wilson", description: "Wilson Tennis Bag", price: 19999, discontinued: false, categories: ["Cat04"]},
   {id: "Cat04-P6", title: "ATR Sports", description: "ATR Sports Tennis Bag", price: 10999, discontinued: true, categories: ["Cat04"]},
   {id: "Cat04-P6", title: "Tecnifibre", description: "Tecnifibre Tennis Bag", price: 11999, discontinued: false, categories: ["Cat04"]},
+
+  {id: "Cat05-P6", title: "Tecnifibre", description: "Tecnifibre Tennis String", price: 1999, discontinued: false, categories: ["Cat05"]},
+  {id: "Cat05-P6", title: "Luxilon", description: "Luxilon Tennis String", price: 3999, discontinued: false, categories: ["Cat05"]},
+  {id: "Cat05-P6", title: "Solinco", description: "Solinco Tennis String", price: 999, discontinued: false, categories: ["Cat05"]},
+  {id: "Cat05-P6", title: "Wilson", description: "Wilson Tennis String", price: 2999, discontinued: false, categories: ["Cat05"]}
 ];
