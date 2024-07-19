@@ -12,9 +12,9 @@ window.categories = [
   /*
     { id: "c1", name: "Category 1" },
    */
-  {id: "Cat01", name: "Tennis Racquets"},
-  {id: "Cat02", name: "Tennis Balls"},
-  {id: "Cat03", name: "Shoes"},
-  {id: "Cat04", name: "Bags"},
-  {id: "Cat05", name: "Strings"}
+  { id: "Cat01", name: "Tennis Racquets", image: "./images/TennisRacquet.png" },
+  { id: "Cat02", name: "Tennis Balls", image: "./images/TennisBalls.jpeg" },
+  { id: "Cat03", name: "Shoes", image: "./images/TennisShoes.jpeg" },
+  { id: "Cat04", name: "Bags", image: "./images/TennisBags.jpeg" },
+  { id: "Cat05", name: "Strings", image: "./images/TennisStrings.jpeg" }
 ];
