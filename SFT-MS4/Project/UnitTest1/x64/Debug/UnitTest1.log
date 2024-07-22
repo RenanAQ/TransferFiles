@@ -1,7 +1,7 @@
-﻿  UnitTest1.cpp
-C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\SFT-MS4\Project\UnitTest1\UnitTest1.cpp(38,30): warning C4838: conversion from 'double' to 'char' requires a narrowing conversion
-C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\SFT-MS4\Project\UnitTest1\UnitTest1.cpp(38,30): warning C4244: 'initializing': conversion from 'double' to 'char', possible loss of data
-C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\SFT-MS4\Project\UnitTest1\UnitTest1.cpp(38,35): warning C4838: conversion from 'double' to 'char' requires a narrowing conversion
-C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\SFT-MS4\Project\UnitTest1\UnitTest1.cpp(38,35): warning C4244: 'initializing': conversion from 'double' to 'char', possible loss of data
-     Creating library C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\SFT-MS4\Project\x64\Debug\UnitTest1.lib and object C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\SFT-MS4\Project\x64\Debug\UnitTest1.exp
-  UnitTest1.vcxproj -> C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\SFT-MS4\Project\x64\Debug\UnitTest1.dll
+﻿  ImplementedFuncsTest.cpp
+C:\Users\Geisiane Pires\Downloads\MS4-github\summer24-sft221-naa-2\SourceCode\Project\UnitTest1\ImplementedFuncsTest.cpp(40,30): warning C4838: conversion from 'double' to 'char' requires a narrowing conversion
+C:\Users\Geisiane Pires\Downloads\MS4-github\summer24-sft221-naa-2\SourceCode\Project\UnitTest1\ImplementedFuncsTest.cpp(40,30): warning C4244: 'initializing': conversion from 'double' to 'char', possible loss of data
+C:\Users\Geisiane Pires\Downloads\MS4-github\summer24-sft221-naa-2\SourceCode\Project\UnitTest1\ImplementedFuncsTest.cpp(40,35): warning C4838: conversion from 'double' to 'char' requires a narrowing conversion
+C:\Users\Geisiane Pires\Downloads\MS4-github\summer24-sft221-naa-2\SourceCode\Project\UnitTest1\ImplementedFuncsTest.cpp(40,35): warning C4244: 'initializing': conversion from 'double' to 'char', possible loss of data
+     Creating library C:\Users\Geisiane Pires\Downloads\MS4-github\summer24-sft221-naa-2\SourceCode\Project\x64\Debug\UnitTest1.lib and object C:\Users\Geisiane Pires\Downloads\MS4-github\summer24-sft221-naa-2\SourceCode\Project\x64\Debug\UnitTest1.exp
+  UnitTest1.vcxproj -> C:\Users\Geisiane Pires\Downloads\MS4-github\summer24-sft221-naa-2\SourceCode\Project\x64\Debug\UnitTest1.dll

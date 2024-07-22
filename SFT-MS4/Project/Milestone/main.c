@@ -9,19 +9,7 @@ int main(void)
 	struct Route blueRoute = getBlueRoute(); //return struct Route, collection of points, the number of points, and a colour
 	struct Map routeMap = addRoute(&baseMap, &blueRoute);// return a struct map, 
 
-	printMap(&routeMap, 0, 0);
-
-	struct Point start = { 0, 0 };
-	struct Point last = { 12, 6 };
-	struct Route route1 = shortestPath(&routeMap, start, last);
-	printf("\n");
-	for (int i = 0; i < route1.numPoints; i++)
-	{
-		
-		printf("{%d,%d},",route1.points[i].row, route1.points[i].col);
-		
-	}
-	printf("\n");
+	printMap(&routeMap, 1, 1);
 
 	return 0;
 }

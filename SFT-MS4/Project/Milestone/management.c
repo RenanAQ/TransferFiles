@@ -54,14 +54,36 @@ bool addPackage(struct Truck* truck, const struct Package package, const struct 
     return true; 
 }
 
-int isValidBoxSize(int boxSize){}
-
-bool isWeightExceed(struct Truck* truck, struct Package* package){}
-
-
-
-bool isVolumeExceed(struct Truck* truck, struct Package* package){}
-
+//Check if the size of box is valid
+int isValidBoxSize(int boxSize) {
+    if (boxSize == 1 || boxSize == 3 || boxSize == 5) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
 
 
 int findNearestTruck(struct Truck* trucks, int numTrucks, struct Package* package, const struct Map* map){}
+
+
+bool isValidRoute(const struct Truck* truck, const struct Package* package) {
+    for (int i = 0; i < MAX_ROUTE; i++) {
+        if (truck->routes[i].numPoints == package->deliveryRoute.numPoints) {
+            bool isSameRoute = true;
+
+            for (int j = 0; j < truck->routes[i].numPoints; j++) {
+                if (!eqPt(truck->routes[i].points[j], package->deliveryRoute.points[j])) {
+                    isSameRoute = false;
+                    break;
+                }
+            }
+            if (isSameRoute) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+

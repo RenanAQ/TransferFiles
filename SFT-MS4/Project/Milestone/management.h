@@ -53,32 +53,6 @@ bool addPackage(struct Truck* truck, const struct Package package, const struct 
 int isValidBoxSize(int boxSize);
 
 /**
- * Function: isWeightExceed
- * - Checks if adding a given package to the truck will exceed the weight limit.
- * - Calculates the new weight after adding the package and compares it to the MAX_WEIGHT.
- * - Returns 1 if adding the package exceeds the weight limit.
- * - Returns 0 if the package can be added without exceeding the limit.
- *
- * @param truck - Pointer to struct Truck, representing the truck to check against.
- * @param package - Pointer to struct Package, representing the package being added.
- * @returns - An integer value, 1 if adding the package exceeds the weight limit, 0 if the package can be added without exceeding the limit.
- */
-bool isWeightExceed(struct Truck* truck, struct Package* package);
-
-/**
- * Function: isVolumeExceed
- * - Checks if adding a given package to the truck will exceed the volume limit.
- * - Calculates the new volume after adding the package and compares it to the MAX_VOLUME.
- * - Returns 1 if adding the package exceeds the volume limit.
- * - Returns 0 if the package can be added without exceeding the limit.
- *
- * @param truck - Pointer to struct Truck, representing the truck to check against.
- * @param package - Pointer to struct Package, representing the package being added.
- * @returns - An integer value, 1 if adding the package exceeds the volume limit, 0 if the package can be added without exceeding the limit.
- */
-bool isVolumeExceed(struct Truck* truck, struct Package* package);
-
-/**
  * Function: findNearestTruck
  * - Finds the closest available truck that has space for the package.
  * - Checks that weight, size, and destination are valid.
@@ -91,6 +65,18 @@ bool isVolumeExceed(struct Truck* truck, struct Package* package);
  * @returns - An integer value, the index of the closest truck or -1 if no truck is found.
  */
 int findNearestTruck(struct Truck* trucks, int numTrucks, struct Package* package, const struct Map* map);
+
+/**
+ * Function: isValidRoute
+ * - Checks if the delivery route of the package is valid based on the routes available in the truck.
+ * - Returns true if the route is valid, false otherwise.
+ *
+ * @param truck - Pointer to struct Truck, representing the truck to check against.
+ * @param package - Pointer to struct Package, representing the package being delivered.
+ * @returns - Boolean value, true if the route is valid, false otherwise.
+ */
+bool isValidRoute(const struct Truck* truck, const struct Package* package);
+
 
 
 #endif
