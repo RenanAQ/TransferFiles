@@ -1,0 +1,73 @@
+Script started on Fri 12 Jul 2024 12:02:34 AM EDT
+==8353== Memcheck, a memory error detector
+==8353== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==8353== Using Valgrind-3.21.0 and LibVEX; rerun with -h for copyright info
+==8353== Command: ws.exe
+==8353== 
+----------------------------------------
+|> T1: Vehicle
+----------------------------------------
+| 2010 | VVV-111 | Factory
+
+| VVV-111| |             Factory ---> Downtown Toronto    |
+| VVV-111| |    Downtown Toronto ---> Mississauga         |
+| VVV-111| |         Mississauga ---> North York          |
+
+| 2010 | VVV-111 | North York
+
+----------------------------------------
+|> T2: Read/Write
+----------------------------------------
+Built year: 2020
+License plate: abc-111
+Current location: Toronto
+
+| 2020 | abc-111 | Toronto
+
+----------------------------------------
+|> T3: Truck
+----------------------------------------
+|  T-1111| |             Factory ---> Toronto HQ          |
+
+|  T-1111| |          Toronto HQ ---> Toronto Deposit     |
+Cargo loaded!
+| 2015 | T-1111 | Toronto Deposit | 2345/5432
+
+|  T-1111| |     Toronto Deposit ---> Montreal            |
+Adding cargo failed!
+| 2015 | T-1111 | Montreal | 2345/5432
+
+|  T-1111| |            Montreal ---> New York            |
+Adding cargo failed!
+| 2015 | T-1111 | New York | 2345/5432
+
+|  T-1111| |            New York ---> New Jersey          |
+Cargo unloaded!
+| 2015 | T-1111 | New Jersey | 0/5432
+
+|  T-1111| |          New Jersey ---> Toronto             |
+Unloading cargo failed!
+| 2015 | T-1111 | Toronto | 0/5432
+
+----------------------------------------
+|> T4: Read/Write
+----------------------------------------
+Built year: 2019
+License plate: def-222
+Current location: Montreal
+Capacity: 2345
+Cargo: 1234
+
+| 2019 | def-222 | Montreal
+| 2019 | def-222 | Montreal | 1234/2345
+
+==8353== 
+==8353== HEAP SUMMARY:
+==8353==     in use at exit: 0 bytes in 0 blocks
+==8353==   total heap usage: 3 allocs, 3 frees, 72,818 bytes allocated
+==8353== 
+==8353== All heap blocks were freed -- no leaks are possible
+==8353== 
+==8353== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Script done on Fri 12 Jul 2024 12:03:03 AM EDT
