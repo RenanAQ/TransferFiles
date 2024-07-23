@@ -1,10 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-WS8\\lab\\",
+  "WorkspaceRootPath": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS8\\lab\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A9109F4-D9CE-478F-9972-6A022A4146B6}|WS08.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-WS8\\lab\\correct_output.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{1A9109F4-D9CE-478F-9972-6A022A4146B6}|WS08.vcxproj|solutionrelative:correct_output.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{1A9109F4-D9CE-478F-9972-6A022A4146B6}|WS08.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS8\\lab\\LblShape.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1A9109F4-D9CE-478F-9972-6A022A4146B6}|WS08.vcxproj|solutionrelative:LblShape.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9109F4-D9CE-478F-9972-6A022A4146B6}|WS08.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS8\\lab\\Rectangle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1A9109F4-D9CE-478F-9972-6A022A4146B6}|WS08.vcxproj|solutionrelative:Rectangle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9109F4-D9CE-478F-9972-6A022A4146B6}|WS08.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS8\\lab\\Line.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1A9109F4-D9CE-478F-9972-6A022A4146B6}|WS08.vcxproj|solutionrelative:Line.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A9109F4-D9CE-478F-9972-6A022A4146B6}|WS08.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS8\\lab\\Rectangle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1A9109F4-D9CE-478F-9972-6A022A4146B6}|WS08.vcxproj|solutionrelative:Rectangle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +35,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "correct_output.txt",
-              "DocumentMoniker": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-WS8\\lab\\correct_output.txt",
-              "RelativeDocumentMoniker": "correct_output.txt",
-              "ToolTip": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-WS8\\lab\\correct_output.txt",
-              "RelativeToolTip": "correct_output.txt",
+              "Title": "LblShape.cpp",
+              "DocumentMoniker": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS8\\lab\\LblShape.cpp",
+              "RelativeDocumentMoniker": "LblShape.cpp",
+              "ToolTip": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS8\\lab\\LblShape.cpp",
+              "RelativeToolTip": "LblShape.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-07-18T21:01:33.086Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-23T02:19:15.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Line.h",
+              "DocumentMoniker": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS8\\lab\\Line.h",
+              "RelativeDocumentMoniker": "Line.h",
+              "ToolTip": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS8\\lab\\Line.h",
+              "RelativeToolTip": "Line.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-23T02:16:12.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Rectangle.h",
+              "DocumentMoniker": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS8\\lab\\Rectangle.h",
+              "RelativeDocumentMoniker": "Rectangle.h",
+              "ToolTip": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS8\\lab\\Rectangle.h",
+              "RelativeToolTip": "Rectangle.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-23T02:16:06.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Rectangle.cpp",
+              "DocumentMoniker": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS8\\lab\\Rectangle.cpp",
+              "RelativeDocumentMoniker": "Rectangle.cpp",
+              "ToolTip": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS8\\lab\\Rectangle.cpp",
+              "RelativeToolTip": "Rectangle.cpp",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-23T02:16:01.516Z",
               "EditorCaption": ""
             }
           ]
