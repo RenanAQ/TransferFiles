@@ -23,25 +23,60 @@ namespace seneca {
 
    const char& Text::operator[](int index) const
    {
-       
-       /*This index operator provides read-only access to the 
-       content of the text for the derived classes of Text.
-       The behaviour of the operator is not defined if the index goes out of bounds.
-       */
-
-       if (index)//NOT index out of bounds
+       if (index <= getFileLength())
        {
            return m_content[index];
        }
-      
+       
    }
 
-   Text::Text(const char* filename)
+   Text::Text(const char* filename): m_filename(nullptr), m_content(nullptr)
    {
-       m_content = nullptr;
-       delete[] m_filename;
-       m_filename = new char[strlen(filename) + 1];
-       strcpy(m_filename, filename);
+       if (filename)
+       {
+           delete[] m_filename;
+           m_filename = new char[strlen(filename) + 1];
+           strcpy(m_filename, filename);
+           read();
+       }
+   }
+
+   Text::Text(const Text& src) : m_filename(nullptr), m_content(nullptr)
+   {
+       if (src.m_filename)
+       {
+           m_filename = new char[strlen(src.m_filename) + 1];
+           strcpy(m_filename, src.m_filename);
+       }
+       if (src.m_content)
+       {
+           m_content = new char[strlen(src.m_content) + 1];
+           strcpy(m_content, src.m_content);
+       }
+      
+
+   }
+
+   Text& Text::operator=(const Text& src)
+   {
+       if (this != &src)
+       {
+           delete[] m_filename;
+           delete[] m_content;
+           m_filename = nullptr;
+           m_content = nullptr;
+           if (src.m_filename)
+           {
+               m_filename = new char[strlen(src.m_filename) + 1];
+               strcpy(m_filename, src.m_filename);
+           }
+           if (src.m_content)
+           {
+               m_content = new char[strlen(src.m_content) + 1];
+               strcpy(m_content, src.m_content);
+           }
+       }
+       return *this;
    }
 
    Text::~Text()
@@ -52,11 +87,21 @@ namespace seneca {
 
    void Text::read()
    {
+       delete[] m_content;
+       m_content = nullptr;
+       int len = getFileLength();
+       if (len > 0)
+       {
+           m_content = new char[len + 1];
+           std::ifstream fin;  // defines a file object named fin
+           fin.read(m_content, len);
+           m_content[len] = '\0';
+       }
    }
 
    void Text::write(std::ostream& os) const
    {
-       if (m_content != nullptr)
+       if (m_content)
        {
            os << m_content;
        }

@@ -14,6 +14,12 @@ namespace seneca {
    public:
       HtmlText(const char* filename=nullptr, const char* title = nullptr);
 
+      // rule of three here
+      HtmlText(const HtmlText&);
+      HtmlText& operator=(const HtmlText&);
+      ~HtmlText();
+
+      virtual void write(std::ostream& os)const;
 
 
    };

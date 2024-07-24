@@ -18,8 +18,8 @@ namespace seneca {
       Text(const char* filename=nullptr);
       
       // rule of three here
-      Text(const Text&) = delete;
-      Text& operator=(const Text&) = delete;
+      Text(const Text&);
+      Text& operator=(const Text&);
       ~Text();
 
       void read();

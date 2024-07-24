@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{538F5C62-3AC3-4DF6-A10F-DC6B8521B17A}|lab.vcxproj|solutionrelative:Text.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{538F5C62-3AC3-4DF6-A10F-DC6B8521B17A}|lab.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS09\\lab\\Text.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{538F5C62-3AC3-4DF6-A10F-DC6B8521B17A}|lab.vcxproj|solutionrelative:Text.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{538F5C62-3AC3-4DF6-A10F-DC6B8521B17A}|lab.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS09\\lab\\HtmlText.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{538F5C62-3AC3-4DF6-A10F-DC6B8521B17A}|lab.vcxproj|solutionrelative:HtmlText.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{538F5C62-3AC3-4DF6-A10F-DC6B8521B17A}|lab.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS09\\lab\\HtmlText.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{538F5C62-3AC3-4DF6-A10F-DC6B8521B17A}|lab.vcxproj|solutionrelative:HtmlText.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538F5C62-3AC3-4DF6-A10F-DC6B8521B17A}|lab.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS09\\lab\\Text.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{538F5C62-3AC3-4DF6-A10F-DC6B8521B17A}|lab.vcxproj|solutionrelative:Text.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,20 +40,20 @@
               "RelativeDocumentMoniker": "Text.cpp",
               "ToolTip": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS09\\lab\\Text.cpp",
               "RelativeToolTip": "Text.cpp",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAACMAAAAGAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-23T02:12:36.33Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "HtmlText.cpp",
               "DocumentMoniker": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS09\\lab\\HtmlText.cpp",
               "RelativeDocumentMoniker": "HtmlText.cpp",
               "ToolTip": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS09\\lab\\HtmlText.cpp",
               "RelativeToolTip": "HtmlText.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAACAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-23T02:12:47.903Z",
               "EditorCaption": ""
@@ -62,30 +62,30 @@
         },
         {
           "DockedWidth": 180,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Text.h",
               "DocumentMoniker": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS09\\lab\\Text.h",
               "RelativeDocumentMoniker": "Text.h",
               "ToolTip": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS09\\lab\\Text.h",
               "RelativeToolTip": "Text.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAZAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-07-23T02:13:03.966Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "HtmlText.h",
               "DocumentMoniker": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS09\\lab\\HtmlText.h",
               "RelativeDocumentMoniker": "HtmlText.h",
               "ToolTip": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Workshops\\OOP-WS09\\lab\\HtmlText.h",
               "RelativeToolTip": "HtmlText.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-07-23T02:13:03.083Z",
               "EditorCaption": ""
