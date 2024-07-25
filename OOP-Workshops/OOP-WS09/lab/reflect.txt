@@ -1,0 +1,13 @@
+* Student: Renan de Alencar Queiroz
+* ID: 129280236
+I have done all the coding by myself and only copied the code that my professor provided
+to complete my workshops and assignments.
+
+In this workshop, I focused on developing my proficiency in dynamic memory management, file handling, and class design in C++. 
+Through implementing the Text and HtmlText classes, I applied essential concepts such as the rule of three, which includes the copy constructor, copy assignment operator, and destructor. 
+This ensures proper management of dynamically allocated memory, preventing memory leaks and ensuring deep copying of class objects.
+In the Text class, I handled file operations by reading file contents into dynamically allocated memory and providing read-only access through the subscript operator. 
+The HtmlText class, derived from Text, enhanced functionality by converting text file content into a simple HTML format. 
+I overrode the write method to replace specific characters with their HTML equivalents, ensuring a seamless HTML conversion.
+Throughout this workshop, I utilized the skills I acquired during the semester to effectively manage memory, handle file I/O operations, and implement class inheritance. 
+By applying these concepts, I reinforced my understanding of dynamic memory allocation, class design, and inheritance in C++.

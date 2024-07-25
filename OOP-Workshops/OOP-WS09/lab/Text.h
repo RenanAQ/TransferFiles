@@ -9,11 +9,11 @@ to complete my workshops and assignments.
 #define SENECA_TEXT_H__
 namespace seneca {
    class Text {
-      char* m_filename = nullptr ; //Hold the name of the file dynamically
-      char* m_content = nullptr ; //Holds the content of the text file dynamically.
+      char* m_filename; //Hold the name of the file dynamically
+      char* m_content; //Holds the content of the text file dynamically.
       int getFileLength()const;
    protected:
-      const char& operator[](int index)const;
+      const char& operator[](unsigned int index)const;
    public:
       Text(const char* filename=nullptr);
       

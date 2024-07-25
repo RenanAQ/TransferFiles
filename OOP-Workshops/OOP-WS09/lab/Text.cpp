@@ -21,14 +21,10 @@ namespace seneca {
       return len;
    }
 
-   const char& Text::operator[](int index) const
+   const char& Text::operator[](unsigned int index) const 
    {
-       if (index <= getFileLength())
-       {
-           return m_content[index];
-       }
-       
-   }
+        return m_content[index];
+    }
 
    Text::Text(const char* filename): m_filename(nullptr), m_content(nullptr)
    {
@@ -52,7 +48,9 @@ namespace seneca {
        {
            m_content = new char[strlen(src.m_content) + 1];
            strcpy(m_content, src.m_content);
+           read();
        }
+       
       
 
    }
@@ -65,15 +63,16 @@ namespace seneca {
            delete[] m_content;
            m_filename = nullptr;
            m_content = nullptr;
-           if (src.m_filename)
+           if (src.m_filename) //checking if src is not null
            {
                m_filename = new char[strlen(src.m_filename) + 1];
                strcpy(m_filename, src.m_filename);
            }
-           if (src.m_content)
+           if (src.m_content) //checking if src is not null
            {
                m_content = new char[strlen(src.m_content) + 1];
                strcpy(m_content, src.m_content);
+               read();
            }
        }
        return *this;
@@ -93,7 +92,8 @@ namespace seneca {
        if (len > 0)
        {
            m_content = new char[len + 1];
-           std::ifstream fin;  // defines a file object named fin
+           std::ifstream fin(m_filename);  // defines a file object named fin
+           //if file
            fin.read(m_content, len);
            m_content[len] = '\0';
        }
