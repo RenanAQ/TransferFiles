@@ -38,6 +38,7 @@ namespace seneca {
         }
         return *this;
     }
+    ////
 
     void Publication::set(int member_id) {
         m_membership = member_id;
@@ -74,7 +75,9 @@ namespace seneca {
     int Publication::getRef() const {
         return m_libRef;
     }
-
+    /// @brief /
+    /// @param io 
+    /// @return 
     bool Publication::conIO(std::ios& io) const {
         return &io == &std::cin || &io == &std::cout;
     }

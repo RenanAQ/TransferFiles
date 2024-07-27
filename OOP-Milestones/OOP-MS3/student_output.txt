@@ -1,0 +1,61 @@
+Script started on Sat 27 Jul 2024 11:24:28 AM EDT
+==55638== Memcheck, a memory error detector
+==55638== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==55638== Using Valgrind-3.21.0 and LibVEX; rerun with -h for copyright info
+==55638== Command: ms.exe
+==55638== 
+An Invalid publication printout:
+><
+Enter the following: 
+P1234
+------------------------------
+Shelf No: P1234
+==55638== Invalid read of size 1
+==55638==    at 0x4C30FF2: strlen (vg_replace_strmem.c:501)
+==55638==    by 0x403498: seneca::Publication::operator=(seneca::Publication const&) (Publication.cpp:32)
+==55638==    by 0x401E31: main (ms3_tester_prof.cpp:46)
+==55638==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==55638== 
+==55638== 
+==55638== Process terminating with default action of signal 11 (SIGSEGV)
+==55638==  Access not within mapped region at address 0x0
+==55638==    at 0x4C30FF2: strlen (vg_replace_strmem.c:501)
+==55638==    by 0x403498: seneca::Publication::operator=(seneca::Publication const&) (Publication.cpp:32)
+==55638==    by 0x401E31: main (ms3_tester_prof.cpp:46)
+==55638==  If you believe this happened as a result of a stack
+==55638==  overflow in your program's main thread (unlikely but
+==55638==  possible), you can try to increase the size of the
+==55638==  main thread stack using the --main-stacksize= flag.
+==55638==  The main thread stack size used in this run was 8388608.
+==55638== 
+==55638== HEAP SUMMARY:
+==55638==     in use at exit: 72,704 bytes in 1 blocks
+==55638==   total heap usage: 5 allocs, 4 frees, 90,224 bytes allocated
+==55638== 
+==55638== 72,704 bytes in 1 blocks are still reachable in loss record 1 of 1
+==55638==    at 0x4C2B15C: malloc (vg_replace_malloc.c:431)
+==55638==    by 0x4EDD3E5: pool (eh_alloc.cc:123)
+==55638==    by 0x4EDD3E5: __static_initialization_and_destruction_0 (eh_alloc.cc:262)
+==55638==    by 0x4EDD3E5: _GLOBAL__sub_I_eh_alloc.cc (eh_alloc.cc:338)
+==55638==    by 0x400F9C2: _dl_init (in /usr/lib64/ld-2.17.so)
+==55638==    by 0x4001179: ??? (in /usr/lib64/ld-2.17.so)
+==55638== 
+==55638== LEAK SUMMARY:
+==55638==    definitely lost: 0 bytes in 0 blocks
+==55638==    indirectly lost: 0 bytes in 0 blocks
+==55638==      possibly lost: 0 bytes in 0 blocks
+==55638==    still reachable: 72,704 bytes in 1 blocks
+==55638==         suppressed: 0 bytes in 0 blocks
+==55638== 
+==55638== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==55638== 
+==55638== 1 errors in context 1 of 1:
+==55638== Invalid read of size 1
+==55638==    at 0x4C30FF2: strlen (vg_replace_strmem.c:501)
+==55638==    by 0x403498: seneca::Publication::operator=(seneca::Publication const&) (Publication.cpp:32)
+==55638==    by 0x401E31: main (ms3_tester_prof.cpp:46)
+==55638==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==55638== 
+==55638== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+
+Script done on Sat 27 Jul 2024 11:24:33 AM EDT
