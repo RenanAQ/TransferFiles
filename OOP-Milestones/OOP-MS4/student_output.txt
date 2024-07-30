@@ -1,9 +1,9 @@
-Script started on Mon 29 Jul 2024 11:21:13 PM EDT
-==165083== Memcheck, a memory error detector
-==165083== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
-==165083== Using Valgrind-3.21.0 and LibVEX; rerun with -h for copyright info
-==165083== Command: ms.exe
-==165083== 
+Script started on Tue 30 Jul 2024 12:01:59 AM EDT
+==210280== Memcheck, a memory error detector
+==210280== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==210280== Using Valgrind-3.21.0 and LibVEX; rerun with -h for copyright info
+==210280== Command: ms.exe
+==210280== 
 An Invalid Book printout:
 ><
 
@@ -36,23 +36,24 @@ Title: The Story of My Experiments with Truth
 Date: 2024/11/17
 Author: Mohandas Karamchand Gandhi
 You entered:
-
+| P123 | The Story of My Experiments wi |  N/A  | 2024/11/17 | Mohandas Karamc |
 And the title is agian: "The Story of My Experiments with Truth"
 Now this publication is on loan to a member with the id: 12345
 The checkout date is: 2024/12/25
 The library unique reference id is: 9999
-
+| P123 | The Story of My Experiments wi | 12345 | 2024/12/25 | Mohandas Karamc |
 ----------------------------------------------------------------
 Adding the Book to the end of the data file:
+appeneded to the file
 
 Contents of the file:
-==165083== 
-==165083== HEAP SUMMARY:
-==165083==     in use at exit: 0 bytes in 0 blocks
-==165083==   total heap usage: 27 allocs, 27 frees, 108,296 bytes allocated
-==165083== 
-==165083== All heap blocks were freed -- no leaks are possible
-==165083== 
-==165083== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==210280== 
+==210280== HEAP SUMMARY:
+==210280==     in use at exit: 0 bytes in 0 blocks
+==210280==   total heap usage: 37 allocs, 37 frees, 108,931 bytes allocated
+==210280== 
+==210280== All heap blocks were freed -- no leaks are possible
+==210280== 
+==210280== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 
-Script done on Mon 29 Jul 2024 11:22:23 PM EDT
+Script done on Tue 30 Jul 2024 12:02:33 AM EDT

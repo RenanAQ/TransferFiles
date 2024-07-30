@@ -87,12 +87,23 @@ namespace seneca {
 
     std::ostream& Publication::write(std::ostream& os) const {
         if (conIO(os)) {
-            os << "| " << m_shelfId << " | "
-                << std::left << std::setw(SENECA_TITLE_WIDTH) << std::setfill('.') << m_title
-                << " | " << std::setw(5) << std::setfill(' ') << (m_membership != 0 ? intToString(m_membership).c_str() : " N/A")
+            os << "| " << m_shelfId << " | ";
+
+            // Check if the title length exceeds SENECA_TITLE_WIDTH
+            if (std::strlen(m_title) > SENECA_TITLE_WIDTH) {
+                // Create a temporary buffer to hold the truncated title
+                char tempTitle[SENECA_TITLE_WIDTH + 1];
+                std::strncpy(tempTitle, m_title, SENECA_TITLE_WIDTH);
+                tempTitle[SENECA_TITLE_WIDTH] = '\0'; // Null-terminate the string
+
+                os << std::left << std::setw(SENECA_TITLE_WIDTH) << std::setfill('.') << tempTitle;
+            } else {
+                os << std::left << std::setw(SENECA_TITLE_WIDTH) << std::setfill('.') << m_title;
+            }
+
+            os << " | " << std::setw(5) << std::setfill(' ') << (m_membership != 0 ? intToString(m_membership).c_str() : " N/A")
                 << " | " << m_date << " |";
-        }
-        else {
+        } else {
             os << type() << '\t' << m_libRef << '\t' << m_shelfId << '\t'
                 << m_title << '\t' << m_membership << '\t' << m_date;
         }
