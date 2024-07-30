@@ -32,7 +32,7 @@ window.products = [
     price: 499,
     discontinued: false,
     categories: ["Cat02"],
-    imageUrl: "../src/images/TennisBalls.png"
+    imageUrl: "../src/images/TennisBalls.jpeg"
   },
   
   {
@@ -42,7 +42,7 @@ window.products = [
     price: 17999,
     discontinued: false,
     categories: ["Cat03"],
-    imageUrl: "../src/images/TennisShoes.png"
+    imageUrl: "../src/images/TennisShoes.jpeg"
   },
   {
     id: "Cat04-P6",
@@ -51,7 +51,7 @@ window.products = [
     price: 19999,
     discontinued: false,
     categories: ["Cat04"],
-    imageUrl: "../src/images/TennisBags.png"
+    imageUrl: "../src/images/TennisBags.jpeg"
   },
 
   {
@@ -61,6 +61,6 @@ window.products = [
     price: 3999,
     discontinued: false,
     categories: ["Cat05"],
-    imageUrl: "../src/images/TennisStrings.png"
+    imageUrl: "../src/images/TennisStrings.jpeg"
   }
 ];
