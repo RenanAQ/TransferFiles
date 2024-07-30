@@ -2,6 +2,7 @@
 Student: Renan de Alencar Queiroz
 ID: 129280236
 */
+#define _CRT_SECURE_NO_WARNINGS
 #include "Book.h"
 #include <iostream>
 #include <iomanip>
@@ -96,14 +97,11 @@ namespace seneca {
 			is.ignore();
 			is.getline(authorName, SENECA_AUTHOR_WIDTH + 1);
 		}
-		if (is)
-		{
-			if (authorName[0] != '\0')
-			{
-				m_authorName = new char(std::strlen(authorName) + 1);
-				std::strcpy(m_authorName, authorName);
-			}
-		}
+
+		//if (is) { //Debuging: Removing this to test if the code works
+			m_authorName = new char[std::strlen(authorName) + 1];
+			std::strcpy(m_authorName, authorName);
+		//}
 		return is;
 	}
 

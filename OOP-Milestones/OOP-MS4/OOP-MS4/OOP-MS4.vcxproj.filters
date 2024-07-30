@@ -21,6 +21,12 @@
     <Text Include="..\BooksOriginal.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="..\correct_output.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="..\student_output.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ms4_tester.cpp">

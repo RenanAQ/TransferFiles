@@ -129,6 +129,8 @@
   <ItemGroup>
     <Text Include="..\Books.txt" />
     <Text Include="..\BooksOriginal.txt" />
+    <Text Include="..\correct_output.txt" />
+    <Text Include="..\student_output.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Book.cpp" />
