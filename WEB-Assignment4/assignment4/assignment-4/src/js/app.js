@@ -20,35 +20,69 @@ const { products, categories } = window;
 // For debugging, display all of our data in the console
 console.log({ products, categories }, "Store Data");
 
-var contentDiv = document.getElementById('main-content');
+//var mainContentDiv = document.getElementById("main-content"); //main div
 
-//h1
-var header1 = document.createElement('h1');
-header1.textContent = 'This is the first header';
-//append h1
-contentDiv.appendChild(header1);
+document.addEventListener("DOMContentLoaded", () => {
+  initializeCategories();
+  displayFirstProduct(products); // Display first product by default
+});
+
+function initializeCategories() {
+  const menu = document.querySelector("#menu");
+  categories.forEach((category) => {
+    const button = document.createElement("button");
+    button.textContent = category.name;
+    button.addEventListener("click", () => {
+      const filteredProducts = products.filter((product) =>
+        product.categories.includes(category.id)
+      );
+      displayProducts(filteredProducts);
+    });
+    menu.appendChild(button);
+  });
+}
 
 function createProductCard(product) {
   // Create a <div> to hold the card
-  const card = document.createElement('div');
+  const card = document.createElement("article");
   // Add the .card class to the <div>
-  card.classList.add('card');
+  card.classList.add("card");
 
   // Create a product image, use the .card-image class
-  const productImage = document.createElement('img'); //creating the tag
+  const productImage = document.createElement("img"); //creating the tag
   productImage.src = product.imageUrl; //image source
-  productImage.classList.add('card-image'); //creating a class
+  productImage.classList.add("card-image"); //creating a class
   card.appendChild(productImage); //appending
-  
-  var header3 = document.createElement('h3');
-  header3.textContent = 'Product'
+
+  // Text about the products
+  var header3 = document.createElement("h3"); //title
+  header3.textContent = product.title;
   card.appendChild(header3);
+  var productDesc = document.createElement("p"); //description
+  productDesc.textContent = product.description;
+  card.appendChild(productDesc);
+  var productPrice = document.createElement("footer"); //price
+  productPrice.textContent = "$" + product.price / 100;
+  card.appendChild(productPrice);
 
   // Return the card’s <div> element to the caller
   return card;
 }
-for (let index = 0; index < products.length; index++) {
-  var prod1 = createProductCard(products[index]);
-  contentDiv.appendChild(prod1);
-  
+
+function displayProducts(products) {
+  const mainContentDiv = document.getElementById("main-content");
+  mainContentDiv.innerHTML = "";
+  products.forEach((product) => {
+    const prod = createProductCard(product);
+    mainContentDiv.appendChild(prod);
+  });
+}
+
+function displayFirstProduct(products) {
+  const mainContentDiv = document.getElementById("main-content");
+  mainContentDiv.innerHTML = "";
+  if (products.length > 0) {
+    const firstProduct = createProductCard(products[0]);
+    mainContentDiv.appendChild(firstProduct);
+  }
 }

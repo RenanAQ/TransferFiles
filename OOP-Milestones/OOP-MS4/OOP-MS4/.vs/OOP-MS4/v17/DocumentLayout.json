@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\OOP-MS4\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3A87B8C2-7D42-4DBB-9346-E4E311BC0656}|OOP-MS4.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\ms4_tester_prof.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A87B8C2-7D42-4DBB-9346-E4E311BC0656}|OOP-MS4.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\output.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3A87B8C2-7D42-4DBB-9346-E4E311BC0656}|OOP-MS4.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\Book.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A87B8C2-7D42-4DBB-9346-E4E311BC0656}|OOP-MS4.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\ms4_tester.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3A87B8C2-7D42-4DBB-9346-E4E311BC0656}|OOP-MS4.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\Publication.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A87B8C2-7D42-4DBB-9346-E4E311BC0656}|OOP-MS4.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\student_output.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3A87B8C2-7D42-4DBB-9346-E4E311BC0656}|OOP-MS4.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\correct_output.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
@@ -22,9 +22,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{3A87B8C2-7D42-4DBB-9346-E4E311BC0656}|OOP-MS4.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\Publication.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A87B8C2-7D42-4DBB-9346-E4E311BC0656}|OOP-MS4.vcxproj|C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\output.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +31,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 202,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,20 +39,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "student_output.txt",
-              "DocumentMoniker": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\student_output.txt",
-              "RelativeDocumentMoniker": "..\\student_output.txt",
-              "ToolTip": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\student_output.txt",
-              "RelativeToolTip": "..\\student_output.txt",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-07-30T03:23:13.96Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "output.md",
               "DocumentMoniker": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\output.md",
               "RelativeDocumentMoniker": "..\\output.md",
@@ -63,7 +47,8 @@
               "RelativeToolTip": "..\\output.md",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAACEAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-07-30T00:29:31.31Z"
+              "WhenOpened": "2024-07-30T00:29:31.31Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -79,13 +64,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Book.cpp",
               "DocumentMoniker": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\Book.cpp",
               "RelativeDocumentMoniker": "..\\Book.cpp",
               "ToolTip": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\Book.cpp",
               "RelativeToolTip": "..\\Book.cpp",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAAAGQAAABBAAAA",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAGkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-30T00:06:55.444Z",
               "EditorCaption": ""
@@ -98,26 +83,26 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ms4_tester.cpp",
-              "DocumentMoniker": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\ms4_tester.cpp",
-              "RelativeDocumentMoniker": "..\\ms4_tester.cpp",
-              "ToolTip": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\ms4_tester.cpp",
-              "RelativeToolTip": "..\\ms4_tester.cpp",
-              "ViewState": "AQIAADwAAAAAAAAAAAAQwE0AAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "ms4_tester_prof.cpp",
+              "DocumentMoniker": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\ms4_tester_prof.cpp",
+              "RelativeDocumentMoniker": "..\\ms4_tester_prof.cpp",
+              "ToolTip": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\ms4_tester_prof.cpp",
+              "RelativeToolTip": "..\\ms4_tester_prof.cpp",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAAAHQAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-30T03:27:37.896Z",
+              "WhenOpened": "2024-07-30T14:32:05.111Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Publication.cpp",
               "DocumentMoniker": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\Publication.cpp",
               "RelativeDocumentMoniker": "..\\Publication.cpp",
               "ToolTip": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\Publication.cpp",
               "RelativeToolTip": "..\\Publication.cpp",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAQwFUAAAAAAAAA",
+              "ViewState": "AQIAAIEAAAAAAAAAAAAQwHQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-30T00:10:34.152Z",
               "EditorCaption": ""
@@ -132,8 +117,7 @@
               "RelativeToolTip": "..\\Book.h",
               "ViewState": "AQIAAAIAAAAAAAAAAAAcwBsAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-30T00:06:59.388Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-30T00:06:59.388Z"
             },
             {
               "$type": "Document",
@@ -143,7 +127,7 @@
               "RelativeDocumentMoniker": "..\\correct_output.txt",
               "ToolTip": "C:\\Users\\Geisiane Pires\\Documents\\03. RENAN\\TransferFiles-Github\\TransferFiles\\OOP-Milestones\\OOP-MS4\\correct_output.txt",
               "RelativeToolTip": "..\\correct_output.txt",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2024-07-30T03:23:19.836Z",
               "EditorCaption": ""

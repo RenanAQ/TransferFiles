@@ -135,7 +135,7 @@
   <ItemGroup>
     <ClCompile Include="..\Book.cpp" />
     <ClCompile Include="..\Date.cpp" />
-    <ClCompile Include="..\ms4_tester.cpp" />
+    <ClCompile Include="..\ms4_tester_prof.cpp" />
     <ClCompile Include="..\Publication.cpp" />
     <ClCompile Include="..\Streamable.cpp" />
     <ClCompile Include="..\Utils.cpp" />
