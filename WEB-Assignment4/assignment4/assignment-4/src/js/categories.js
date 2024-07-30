@@ -1,11 +1,16 @@
 /**
- * categories.js
+ * WEB222 – Assignment 05
  *
- * The store's categories are defined in an Array of category Objects. Each
- * category Object has the following properties:
+ * I declare that this assignment is my own work in accordance with
+ * Seneca Academic Policy. No part of this assignment has been
+ * copied manually or electronically from any other source
+ * (including web sites) or distributed to other students.
  *
- *  - id: String, a unique category id (e.g., "c1", "c2", "c3")
- *  - name: String, the human-readable name for the category (e.g., "Perfume")
+ * Please update the following with your information:
+ *
+ *      Name:       Renan de Alencar Queiroz
+ *      Student ID: 129280236
+ *      Date:       Jul 29, 2024
  */
 
 window.categories = [

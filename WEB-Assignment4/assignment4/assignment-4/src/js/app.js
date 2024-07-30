@@ -1,5 +1,5 @@
 /**
- * WEB222 – Assignment 04
+ * WEB222 – Assignment 05
  *
  * I declare that this assignment is my own work in accordance with
  * Seneca Academic Policy. No part of this assignment has been
@@ -10,7 +10,7 @@
  *
  *      Name:       Renan de Alencar Queiroz
  *      Student ID: 129280236
- *      Date:       Jul 17, 2024
+ *      Date:       Jul 29, 2024
  */
 
 // All of our data is available on the global `window` object.
@@ -20,71 +20,72 @@ const { products, categories } = window;
 // For debugging, display all of our data in the console
 console.log({ products, categories }, "Store Data");
 
-document.addEventListener("DOMContentLoaded", () => {
-  initializeCategories();
-  showProductsByCategory(categories[0].id); // Display the first category by default
+// Function to create product card
+function createProductCard(product) {
+  // Create a <div> to hold the card
+  const card = document.createElement('div');
+  // Add the .card class to the <div>
+  card.classList.add('card');
+
+  // Create a product image, use the .card-image class
+  const productImage = document.createElement('img');
+  productImage.src = product.imageUrl;
+  productImage.alt = product.title;  // Add alt attribute for better accessibility
+  productImage.classList.add('card-image');
+  card.appendChild(productImage);
+
+  // Create a <div> for card content, use the .card-content class
+  const cardContent = document.createElement('div');
+  cardContent.classList.add('card-content');
+
+  // Create and append product name
+  const productName = document.createElement('h2');
+  productName.classList.add('card-title');
+  productName.textContent = product.title;
+  cardContent.appendChild(productName);
+
+  // Create and append product description
+  const productDescription = document.createElement('p');
+  productDescription.classList.add('card-description');
+  productDescription.textContent = product.description;
+  cardContent.appendChild(productDescription);
+
+  // Create and append product price
+  const productPrice = document.createElement('p');
+  productPrice.classList.add('card-price');
+  productPrice.textContent = `$${(product.price / 100).toFixed(2)}`;
+  cardContent.appendChild(productPrice);
+
+  // Append card content to the card
+  card.appendChild(cardContent);
+
+  // Return the card’s <div> element to the caller
+  return card;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const productContainer = document.getElementById('product-container');
+
+  function displayProducts(productsToDisplay) {
+    // Clear existing content
+    productContainer.innerHTML = '';
+    // Append new product cards
+    productsToDisplay.forEach(product => {
+      const productCard = createProductCard(product);
+      productContainer.appendChild(productCard);
+    });
+  }
+
+  // Initial load - display all products
+  displayProducts(products);
+
+  // Category buttons event listeners
+  const categoryButtons = document.querySelectorAll('.category-button');
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const category = this.getAttribute('data-category');
+      const filteredProducts = products.filter(product => product.categories.includes(category));
+      displayProducts(filteredProducts);
+    });
+  });
 });
-
-function initializeCategories() {
-  const menu = document.querySelector("#menu");
-  categories.forEach((category) => {
-    const button = document.createElement("button");
-    button.textContent = category.name;
-    button.addEventListener("click", () => showProductsByCategory(category.id));
-    menu.appendChild(button);
-  });
-}
-
-function showProductsByCategory(categoryId) {
-  const category = categories.find((cat) => cat.id === categoryId);
-  const productList = document.querySelector("#category-products");
-  const categoryTitle = document.querySelector("#selected-category");
-
-  // Update the category title
-  categoryTitle.textContent = category.name;
-
-  // Clear the current product list
-  productList.innerHTML = "";
-
-  // Clear the existing image
-  const categoryImagesSection = document.querySelector("#category-images");
-  categoryImagesSection.innerHTML = "";
-
-  // Display the image for the selected category
-  const img = document.createElement("img");
-  img.src = category.image;
-  img.alt = category.name;
-  img.style.width = "50%";
-  categoryImagesSection.appendChild(img);
-
-  // Filter and display products
-  const filteredProducts = products.filter(
-    (product) => product.categories.includes(categoryId) && !product.discontinued
-  );
-
-  filteredProducts.forEach((product) => {
-    const row = document.createElement("tr");
-
-    // Click handler for the product
-    row.addEventListener("click", () => console.log(product));
-
-    const titleCell = document.createElement("td");
-    titleCell.textContent = product.title;
-
-    const descriptionCell = document.createElement("td");
-    descriptionCell.textContent = product.description;
-
-    const priceCell = document.createElement("td");
-    priceCell.textContent = formatPrice(product.price);
-
-    row.appendChild(titleCell);
-    row.appendChild(descriptionCell);
-    row.appendChild(priceCell);
-
-    productList.appendChild(row);
-  });
-}
-
-function formatPrice(cents) {
-  return new Intl.NumberFormat("en-CA", { style: "currency", currency: "CAD" }).format(cents / 100);
-}

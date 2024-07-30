@@ -2,44 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <!-- Change this to your name-->
     <meta name="renan" content="Renan-Queiroz" />
 
     <title>WEB222 Store</title>
-    <!-- Classless CSS Stylesheet - https://oxal.org/projects/sakura/ -->
-    <link rel="stylesheet" href="./css/sakura.css" type="text/css" />
+    <link rel="stylesheet" href="./css/styles.css" type="text/css" />
   </head>
   <body>
     <header>
-      <!-- Change this to your Store's info -->
       <h1>Drop Shot Tennis Store</h1>
       <p>Our products are always an ace</p>
     </header>
 
-    <nav id="menu">
-      <!-- Dynamically create your menu category buttons here -->
-    </nav>
+    <!-- Container for product cards -->
+    <div id="product-container"></div>
 
-    <hr />
-
-    <main>
-      <h2 id="selected-category">
-        <!-- Dynamically update the selected category title -->
-      </h2>
-
-      <table>
-        <thead>
-          <!-- Statically create the headings for your table here -->
-        </thead>
-        <tbody id="category-products">
-          <!-- Dynamically create your product rows here -->
-        </tbody>
-      </table>
-    </main>
-
-    <section id="category-images">
-      <!-- Dynamically create images -->
-    </section>
+    <!-- Category buttons -->
+    <button class="category-button" data-category="Cat01">Racquets</button>
+    <button class="category-button" data-category="Cat02">Balls</button>
+    <button class="category-button" data-category="Cat03">Shoes</button>
+    <button class="category-button" data-category="Cat04">Bags</button>
+    <button class="category-button" data-category="Cat05">Strings</button>
 
     <!-- JavaScript Data Files -->
     <script src="./js/categories.js"></script>
