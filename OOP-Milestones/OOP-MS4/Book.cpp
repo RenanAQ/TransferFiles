@@ -98,7 +98,7 @@ namespace seneca {
 			is.getline(authorName, SENECA_AUTHOR_WIDTH + 1);
 		}
 
-		if (is) { //Debuging: Removing this to test if the code works
+		if (!is) { //Debuging: Removing this to test if the code works
 			m_authorName = new char[std::strlen(authorName) + 1];
 			std::strcpy(m_authorName, authorName);
 		}
