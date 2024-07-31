@@ -1,0 +1,65 @@
+Script started on Tue 30 Jul 2024 05:13:00 PM EDT
+==180638== Memcheck, a memory error detector
+==180638== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==180638== Using Valgrind-3.21.0 and LibVEX; rerun with -h for copyright info
+==180638== Command: ws.exe
+==180638== 
+All the cars:
+GVFGHI Tesla Model S
+ABCDEF BMW 320
+CDEFGH Ford Festiva
+BCDEFG Ford Festiva
+GVDGHI Tesla Model 3
+EFGHIJ Nissan Maxima
+GVDEFG Tesla Model X
+Searching for Tesla cars: 
+3 matches found:
+1: GVFGHI Tesla Model S
+2: GVDGHI Tesla Model 3
+3: GVDEFG Tesla Model X
+
+All students:
+23456 Lisa Simpson GPA: 4.0
+45678 Ralph Wiggum GPA: 2.1
+56789 Milhouse Van Houten GPA: 4.0
+67890 Todd Flanders GPA: 3.5
+34567 Nelson Muntz GPA: 3.0
+12345 Bart Simpson GPA: 1.5
+Searching for students with 4.0 Gpa:
+2 matches found:
+1: 23456 Lisa Simpson GPA: 4.0
+2: 56789 Milhouse Van Houten GPA: 4.0
+
+All employees:
+213456 Carl Carlson (Office# 111) Salary: $62344.56
+122345 Mindy Simmons (Office# 222) Salary: $65432.44
+435678 Lenny Leonard (Office# 111) Salary: $43213.22
+546789 Waylon Smithers (Office# 333) Salary: $654321.55
+657890 Frank Grimes (Office# 333) Salary: $34567.88
+364567 Homer Simpson (Office# 111) Salary: $55432.11
+Searching for employees who share office number 111:
+3 matches found:
+1: 213456 Carl Carlson (Office# 111) Salary: $62344.56
+2: 435678 Lenny Leonard (Office# 111) Salary: $43213.22
+3: 364567 Homer Simpson (Office# 111) Salary: $55432.11
+
+Searching for employees who share office number 555:
+No matches found!
+
+INTEGERS
+10
+20
+30
+40
+50
+60
+==180638== 
+==180638== HEAP SUMMARY:
+==180638==     in use at exit: 0 bytes in 0 blocks
+==180638==   total heap usage: 9 allocs, 9 frees, 73,776 bytes allocated
+==180638== 
+==180638== All heap blocks were freed -- no leaks are possible
+==180638== 
+==180638== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Script done on Tue 30 Jul 2024 05:13:01 PM EDT
