@@ -11,16 +11,16 @@ ID: 129280236
 
 namespace seneca {
 
-	seneca::Book::Book() : m_authorName(nullptr)
+	Book::Book() : m_authorName(nullptr)
 	{
 	}
 
-	seneca::Book::~Book()
+	Book::~Book()
 	{
 		delete[] m_authorName;
 	}
 
-	seneca::Book::Book(const Book& other) : Publication(other)
+	Book::Book(const Book& other) : Publication(other)
 	{
 		if (other.m_authorName) {
 			m_authorName = new char[std::strlen(other.m_authorName) + 1];
@@ -31,7 +31,7 @@ namespace seneca {
 		}
 	}
 
-	Book& seneca::Book::operator=(const Book& other)
+	Book& Book::operator=(const Book& other)
 	{
 		if (this != &other) {
 			Publication::operator=(other);
@@ -47,71 +47,70 @@ namespace seneca {
 		return *this;
 	}
 
-	char seneca::Book::type() const
+	char Book::type() const
 	{
 		return 'B';
 	}
 
-	std::ostream& seneca::Book::write(std::ostream& os) const
+	std::ostream& Book::write(std::ostream& os) const
 	{
 		Publication::write(os);
-		if (conIO(os))
-		{
-			if (std::strlen(m_authorName) <= SENECA_AUTHOR_WIDTH)
-			{
-				os << " " << std::setw(SENECA_AUTHOR_WIDTH) << m_authorName << " |";;
-			}
-			else
-			{
-				os << " " << std::setw(SENECA_AUTHOR_WIDTH);
-				for (int i = 0; i < SENECA_AUTHOR_WIDTH; i++)
-				{
-					os << m_authorName[i];
-				}
-				os << " |";
-			}
-		}
-		else
-		{
-			os << '\t' << m_authorName;
-		}
-		return os;
+		if (conIO(os)) {
+            os << " ";
+            if (strlen(m_authorName) > SENECA_AUTHOR_WIDTH) {
+                os << std::setw(SENECA_AUTHOR_WIDTH) << std::left << std::string(m_authorName).substr(0, SENECA_AUTHOR_WIDTH);
+            }
+            else {
+                os << std::setw(SENECA_AUTHOR_WIDTH) << std::left << m_authorName;
+            }
+            os << " |";
+        }
+        else {
+            os << "\t" << m_authorName;
+        }
+        return os;
 	}
 
-	std::istream& seneca::Book::read(std::istream& is)
+	std::istream& Book::read(std::istream& is)
 	{
-		char authorName[256]{};
-		Publication::read(is);
+		char authorName[256];
+        Publication::read(is);
 
-		delete[] m_authorName;
-		m_authorName = nullptr;
+        delete[] m_authorName;
+        m_authorName = nullptr;
 
-		if (conIO(is))
-		{
-			is.ignore();
-			std::cout << "Author: ";
-			is.getline(authorName, SENECA_AUTHOR_WIDTH + 1);
-		}
-		else
-		{
-			is.ignore();
-			is.getline(authorName, SENECA_AUTHOR_WIDTH + 1);
-		}
+        if (conIO(is)) {
+            is.ignore();
+            std::cout << "Author: ";
+            is.getline(authorName, 256);
+        }
+        else {
+            is.get();
+            is.getline(authorName, 256, '\n');
+            is.putback('\n');
+        }
 
-		if (is) { //This statement is not being executed
-			m_authorName = new char[std::strlen(authorName) + 1];
-			std::strcpy(m_authorName, authorName);
-		}
-		return is;
+        if (is) {
+            delete[] m_authorName;
+			if (authorName[0] != '\0') {
+				m_authorName = new char[strlen(authorName) + 1];
+				strcpy(m_authorName, authorName);
+			}
+			else {
+				m_authorName = nullptr;
+			}
+        }
+
+        return is;
 	}
 
-	void seneca::Book::set(int member_id)
+	void Book::set(int member_id)
 	{
 		Publication::set(member_id);
 		Publication::resetDate();
 	}
 
-	seneca::Book::operator bool() const
+	Book::operator bool() const
 	{
 		return (m_authorName != nullptr && m_authorName[0] != '\0' && Publication::operator bool());
 	}
