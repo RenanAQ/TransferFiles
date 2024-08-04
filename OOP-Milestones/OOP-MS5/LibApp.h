@@ -1,52 +1,39 @@
-/* Citation and Sources...
-Final Project Milestone 2
-Module: LibApp
-Filename: LibApp.h
-Version 1.0
-Author	Renan Queiroz
-Revision History
------------------------------------------------------------
-Date      Reason
-2024/7/16  Preliminary release
------------------------------------------------------------
-I have done all the coding by myself and only copied the code
-that my professor provided to complete my workshops and assignments.
------------------------------------------------------------*/
+/*
+Student: Renan de Alencar Queiroz
+ID: 129280236
+*/
+
 #ifndef SENECA_LIBAPP_H
 #define SENECA_LIBAPP_H
 #include "Menu.h"
 #include "Publication.h"
-#include <fstream>
-#include <cstring>
-
+#include "PublicationSelector.h"
+#include "Book.h"
+#include "Utils.h"
 namespace seneca {
     class LibApp {
-        bool m_changed;
-        Menu m_mainMenu;
-        Menu m_exitMenu;
-        Menu m_publicationType; // Publication Type Menu
-        char m_fileName[256]; // File name
-        Publication* PPA[SENECA_LIBRARY_CAPACITY]; // Publication Pointers Array
-        int NOLP; // Number Of Loaded Publications
-        int LLRN; // Last Library Reference Number
-
+        bool m_changed{};
+        Menu m_mainMenu = { "Seneca Library Application" };
+        Menu m_exitMenu = { "Changes have been made to the data, what would you like to do?" };
+        Menu m_pubType = { "Choose the type of publication:" };
+        char m_fileName[256]{};
+        Publication* PPA[SENECA_LIBRARY_CAPACITY]{};
+        int LLRN{};
+        int NOLP{};
+        Publication* getPub(int libRef);
         bool confirm(const char* message);
         void load();
         void save();
-        int search(int mode); // modified to accept a mode argument
+        int search(int);
         void returnPub();
         void newPublication();
         void removePublication();
         void checkOutPub();
-        Publication* getPub(int libRef); // new method
-
     public:
-        LibApp(const char* fileName); // constructor to initialize with a file name
+        LibApp();
+        explicit LibApp(const char*&);
         ~LibApp();
         void run();
     };
 }
-#endif // !SENECA_LIBAPP_H
-
-
-
+#endif

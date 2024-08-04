@@ -2,116 +2,117 @@
 Student: Renan de Alencar Queiroz
 ID: 129280236
 */
-#define _CRT_SECURE_NO_WARNINGS
-#include "Book.h"
-#include <iostream>
-#include <iomanip>
-#include <sstream>
-#include <cstring>
 
+#define _CRT_SECURE_NO_WARNINGS
+#include <cstring>
+#include <iomanip>
+#include "Book.h"
+
+using namespace seneca;
+using namespace std;
 namespace seneca {
 
-	Book::Book() : m_authorName(nullptr)
-	{
-	}
+    Book::Book() : m_authorName{ nullptr } {
+    }
 
-	Book::~Book()
-	{
-		delete[] m_authorName;
-	}
-
-	Book::Book(const Book& other) : Publication(other)
-	{
-		if (other.m_authorName) {
-			m_authorName = new char[std::strlen(other.m_authorName) + 1];
-			std::strcpy(m_authorName, other.m_authorName);
-		}
-		else {
-			m_authorName = nullptr;
-		}
-	}
-
-	Book& Book::operator=(const Book& other)
-	{
-		if (this != &other) {
-			Publication::operator=(other);
-			delete[] m_authorName;
-			if (other.m_authorName) {
-				m_authorName = new char[std::strlen(other.m_authorName) + 1];
-				std::strcpy(m_authorName, other.m_authorName);
-			}
-			else {
-				m_authorName = nullptr;
-			}
-		}
-		return *this;
-	}
-
-	char Book::type() const
-	{
-		return 'B';
-	}
-
-	std::ostream& Book::write(std::ostream& os) const
-	{
-		Publication::write(os);
-		if (conIO(os)) {
-            os << " ";
-            if (strlen(m_authorName) > SENECA_AUTHOR_WIDTH) {
-                os << std::setw(SENECA_AUTHOR_WIDTH) << std::left << std::string(m_authorName).substr(0, SENECA_AUTHOR_WIDTH);
-            }
-            else {
-                os << std::setw(SENECA_AUTHOR_WIDTH) << std::left << m_authorName;
-            }
-            os << " |";
+    Book& Book::operator=(const Book& B) {
+        if (this != &B && B.m_authorName != nullptr) {
+            delete[] m_authorName;
+            m_authorName = nullptr;
+            m_authorName = new char[strlen(B.m_authorName) + 1];
+            strcpy(m_authorName, B.m_authorName);
+            Publication::operator=(B);
         }
         else {
-            os << "\t" << m_authorName;
+            delete[] m_authorName;
+            m_authorName = nullptr;
         }
-        return os;
-	}
+        return *this;
+    }
 
-	std::istream& Book::read(std::istream& is)
-	{
-		char authorName[256];
-        Publication::read(is);
-
+    Book::Book(const Book& B) : Publication(B), m_authorName(nullptr) {
+        *this = B;
+    }
+    Book::~Book() {
         delete[] m_authorName;
         m_authorName = nullptr;
+    }
 
-        if (conIO(is)) {
-            is.ignore();
-            std::cout << "Author: ";
-            is.getline(authorName, 256);
+    char Book::type() const {
+        return 'B';
+    }
+
+    std::ostream& Book::write(std::ostream& os) const {
+        if (!(*this) || !m_authorName)
+            return os;
+        Publication::write(os);
+        if (Publication::conIO(os)) {
+            os << ' ';
+
+            if (m_authorName && m_authorName[0] != '\0') {
+                if (strlen(m_authorName) > SENECA_AUTHOR_WIDTH) {
+                    os.write(m_authorName, SENECA_AUTHOR_WIDTH);
+                }
+                else {
+                    os << setw(SENECA_AUTHOR_WIDTH) << left << setfill(' ');
+                    os << m_authorName;
+                }
+            }
+            os << right << setfill(' ') << " |";
         }
         else {
-            is.get();
-            is.getline(authorName, 256, '\n');
-            is.putback('\n');
+            os << '\t' << m_authorName;
         }
+        os << setfill(' ');
+        return os;
+    }
 
-        if (is) {
+    std::istream& Book::read(istream& is) {
+        char authorName[255]{};
+        Publication::read(is);
+
+        if (m_authorName != nullptr) {
             delete[] m_authorName;
-			if (authorName[0] != '\0') {
-				m_authorName = new char[strlen(authorName) + 1];
-				strcpy(m_authorName, authorName);
-			}
-			else {
-				m_authorName = nullptr;
-			}
+            m_authorName = nullptr;
         }
 
+        if (Publication::conIO(is)) {
+            is.ignore(1, '\n');
+            cout << "Author: ";
+            is.get(authorName, 256, '\n');
+        }
+        else {
+            is.ignore(1, '\t');
+            is.get(authorName, 255, '\n');
+        }
+
+        if (!is.fail()) {
+            m_authorName = new char[strlen(authorName) + 1];
+            strcpy(m_authorName, authorName);
+        }
         return is;
-	}
+    }
 
-	void Book::set(int member_id)
-	{
-		Publication::set(member_id);
-		Publication::resetDate();
-	}
+    void Book::set(int member_id) {
+        Publication::set(member_id);
+        Publication::resetDate();
+    }
 
-	Book::operator bool() const
-	{
-		return (m_authorName != nullptr && m_authorName[0] != '\0' && Publication::operator bool());
-	}
+    Book::operator bool() const {
+        return (m_authorName != nullptr && m_authorName[0] != '\0' && Publication::operator bool());
+    }
+
+    ostream& Book::operator<<(ostream& os) {
+        return write(os);
+    }
+    istream& Book::operator>>(istream& is) {
+        return read(is);
+    }
+
+    ostream& operator<<(ostream& os, const Book& right) {
+        return right.write(os);
+    }
+    istream& operator>>(istream& is, Book& right) {
+        return right.read(is);
+    }
 }

@@ -1,138 +1,124 @@
-/* Citation and Sources...
-Final Project Milestone 2
-Module: Menu
-Filename: Menu.cpp
-Version 1.0
-Author	Renan Queiroz
-Revision History
------------------------------------------------------------
-Date      Reason
-2024/7/16  Preliminary release
------------------------------------------------------------
-I have done all the coding by myself and only copied the code
-that my professor provided to complete my workshops and assignments.
------------------------------------------------------------*/
+/*
+Student: Renan de Alencar Queiroz
+ID: 129280236
+*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include "Menu.h"
-#include <cstring>
-#include <iostream>
+#include "Utils.h"
+using namespace seneca;
 using namespace std;
-
 namespace seneca {
-
-    MenuItem::MenuItem(const char* m_value) {
-        if (m_value && m_value[0] != '\0') {
-            this->m_value = new char[strlen(m_value) + 1];
-            strcpy(this->m_value, m_value);
-        }
-        else {
-            this->m_value = nullptr;
+    Utils ut;
+    MenuItem::MenuItem() {
+        m_itemName = {};
+    }
+    //TODO: check the const is necessary or not
+    MenuItem::MenuItem(const char* str) {
+        if (str != nullptr && str[0] != '\0') {
+            m_itemName = new char[strlen(str) + 1];
+            strcpy(m_itemName, str);
         }
     }
 
     MenuItem::~MenuItem() {
-        delete[] m_value;
-        m_value = nullptr;
+        delete[] m_itemName;
     }
 
     MenuItem::operator bool() const {
-        return (m_value != nullptr);
+        return m_itemName != nullptr && m_itemName[0] != '\0';
+    }
+    //return the address of m_itemName
+    MenuItem::operator const char* ()const {
+        return m_itemName;
     }
 
-    MenuItem::operator const char* () const {
-        return m_value;
-    }
-
-    void MenuItem::view(ostream& ostr) const {
-        if (*this) {
-            ostr << m_value;
+    void MenuItem::display() const {
+        if (m_itemName != nullptr && m_itemName[0] != '\0') {
+            cout << m_itemName;
         }
     }
 
-    Menu::Menu() : m_title(nullptr), m_storedItems(0) {
-        for (unsigned int i = 0; i < MAX_MENU_ITEM; i++) {
-            m_items[i] = nullptr;
-        }
+    Menu::Menu() {
+        //no need just in case
+        m_menuTitle = nullptr;
+        noOfItems = 0;
     }
-
-    Menu::Menu(const char* name) : Menu() {
-        m_title = new MenuItem(name);
+    Menu::Menu(const string str) {
+        m_menuTitle = new char[str.length() + 1];
+        strcpy(m_menuTitle, str.c_str());
+        //no need just in case
+        noOfItems = 0;
     }
 
     Menu::~Menu() {
-        delete m_title;
-        for (unsigned int i = 0; i < m_storedItems; i++) {
-            delete m_items[i];
+        for (size_t i = 0; i < noOfItems; ++i) {
+            if (m_menuItem[i] != nullptr)
+                delete m_menuItem[i];
+            m_menuItem[i] = nullptr;
         }
+        delete[] m_menuTitle;
+        m_menuTitle = nullptr;
     }
 
-    void Menu::viewTitle(ostream& ostr) const {
-        if (m_title) {
-            m_title->view(ostr);
+    void Menu::display()const {
+        if (m_menuTitle != nullptr && m_menuTitle[0] != '\0') {
+            //            cout << m_menuTitle << ":" << endl;
+            cout << m_menuTitle << endl;
         }
+        for (size_t i = 0; i < noOfItems; ++i) {
+            cout.width(2);
+            cout.fill(' ');
+            cout.setf(ios::right);
+            cout << i + 1;
+            cout << "- " << m_menuItem[i]->m_itemName << endl;
+            cout.unsetf(ios::right);
+        }
+        cout << " 0- Exit" << endl << "> ";
     }
 
-    void Menu::displayMenu(ostream& ostr) const {
-        viewTitle(ostr);
-        if (m_title) {
-            ostr << endl;
-        }
-        for (unsigned int i = 0; i < m_storedItems; i++) {
-            ostr <<" "<< i + 1 << "- ";
-            m_items[i]->view(ostr);
-            ostr << endl;
-        }
-        ostr << " 0- Exit" << endl << "> ";
+    unsigned int Menu::run() const {
+        unsigned int ret{};
+        display();
+        ret = (unsigned int)ut.getInt(0, noOfItems);
+        return ret;
     }
 
-    unsigned int Menu::run() {
-        unsigned int a = 0;
-        bool isValid = false;
-        displayMenu(cout);
-        do {
-            cin >> a;
-            if (cin.fail()||a > m_storedItems) {
-                cin.clear();
-                cin.ignore(10000, '\n');
-                cout << "Invalid Selection, try again: ";
-            }
-            else {
-                isValid = true;
-            }
-        } while (!isValid);
-        return a;
-    }
-
-    unsigned int Menu::operator~() {
+    unsigned int Menu::operator~() const {
         return run();
     }
-
+    /*get the menuItemContent
+     * if the menuItemContent less max_items and not negative
+     * set it's name as menuItemContent
+    */
     Menu& Menu::operator<<(const char* menuItemContent) {
-        if (m_storedItems < MAX_MENU_ITEM) {
-            m_items[m_storedItems++] = new MenuItem(menuItemContent);
+        if (noOfItems < MAX_MENU_ITEMS&& noOfItems >= 0) {
+            m_menuItem[noOfItems] = new MenuItem(menuItemContent);
+            noOfItems++;
         }
-        return (*this);
+        return *this;
     }
-
-    Menu::operator int() const {
-        return m_storedItems;
+    Menu::operator int()const {
+        return (int)noOfItems;
     }
-
     Menu::operator unsigned int() const {
-        return m_storedItems;
+        return (unsigned int)noOfItems;
     }
 
     Menu::operator bool() const {
-        return m_storedItems > 0;
+        return noOfItems > 0;
     }
-
+    //Overload the indexing operator to return the const char* cast of the corresponding MenuItem in the array of MenuItem pointers.
+    //If the index passes the number of MenuItems in the Menu, loop back to the beginning.
     const char* Menu::operator[](unsigned int index) const {
-        return *m_items[index % m_storedItems];
+        return (const char*)*m_menuItem[index % MAX_MENU_ITEMS];
     }
 
-    ostream& operator<<(ostream& os, Menu& menu) {
-        menu.viewTitle(os);
-        return os;
+    std::ostream& operator<<(std::ostream& ostr, const Menu& menu) {
+        return (menu.m_menuTitle != nullptr && menu.m_menuTitle[0] != '\0') ? ostr << menu.m_menuTitle : ostr;
     }
+
+
 }
+
 

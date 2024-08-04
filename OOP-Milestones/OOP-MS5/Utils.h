@@ -4,8 +4,16 @@ ID: 129280236
 */
 #ifndef SENECA_UTILS_H__
 #define SENECA_UTILS_H__
-namespace seneca
-{
-	//NOTHING HERE
+#include <iostream>
+namespace seneca {
+    class Utils {
+    public:
+        size_t getInt(size_t, size_t);
+        int getMemberNum();
+        char getType(unsigned int);
+    };
+    extern Utils ut;
 }
-#endif
+#endif // SENECA_UTILS_H__
+
+

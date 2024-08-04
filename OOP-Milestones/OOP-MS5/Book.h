@@ -2,27 +2,33 @@
 Student: Renan de Alencar Queiroz
 ID: 129280236
 */
-#ifndef SENECA_BOOK_H__
-#define SENECA_BOOK_H__
+
+#ifndef SENECA_BOOK_H
+#define SENECA_BOOK_H
 #include "Publication.h"
+using namespace seneca;
 namespace seneca {
-	class Book: public Publication
-	{
-	public:
-		Book();
-		~Book();
-		Book(const Book& other);
-		Book& operator=(const Book& other);
+    class Book : public Publication {
+        char* m_authorName{};
+    public:
+        Book();
+        //rule of three
+        Book& operator=(const Book&);
+        Book(const Book&);
+        ~Book() override;
 
-		char type() const override;
-		std::ostream& write(std::ostream&) const override;
-		std::istream& read(std::istream& is) override;
-		void set(int member_id);
-		operator bool() const override;
+        char type()const override;
+        std::ostream& write(std::ostream&) const override;
+        std::istream& read(std::istream&) override;
+        void set(int member_id) override;
+        operator bool() const override;
 
-
-	private:
-		char* m_authorName;
-	};
+        std::ostream& operator<<(std::ostream& os) override;
+        std::istream& operator>>(std::istream& is) override;
+    };
+    std::ostream& operator<<(std::ostream& os, const Book& right);
+    std::istream& operator>>(std::istream& is, Book& right);
 }
-#endif
+#endif //SENECA_BOOK_H
+
+

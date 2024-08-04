@@ -2,52 +2,64 @@
 Student: Renan de Alencar Queiroz
 ID: 129280236
 */
+
 #define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <iomanip>
-#include <sstream>
 #include <cstring>
+#include <iomanip>
 #include "Publication.h"
-#include "Lib.h"
+
+using namespace std;
+
+using namespace seneca;
 
 namespace seneca {
 
-    std::string intToString(int num) {
-        std::ostringstream oss;
-        oss << num;
-        return oss.str();
+    Publication::Publication() : m_title(nullptr), m_shelfId{ "" }, m_membership(0), m_libRef(-1), m_date() {
     }
 
-    Publication::Publication()
-        : m_title(nullptr), m_membership(0), m_libRef(-1), m_date() {
-        m_shelfId[0] = '\0';
-    }
-
-    Publication::~Publication() {
-        delete[] m_title;
-    }
-
-    Publication::Publication(const Publication& other) : Publication() {
-        *this = other;
-    }
-
-    Publication& Publication::operator=(const Publication& other) {
-        if (this != &other) {
+    Publication::Publication(const Publication& P) : Publication() {
+        if (m_title != nullptr) {
             delete[] m_title;
             m_title = nullptr;
-            if (other.m_title) {
-                m_title = new char[std::strlen(other.m_title) + 1];
-                std::strcpy(m_title, other.m_title);
+        }
+        if (P.m_title != nullptr && P.m_title[0] != '\0') {
+            m_title = new char[strlen(P.m_title) + 1];
+            strcpy(m_title, P.m_title);
+        }
+        strcpy(m_shelfId, P.m_shelfId);
+        m_membership = P.m_membership;
+        m_libRef = P.m_libRef;
+        m_date = P.m_date;
+    }
+    Publication& Publication::operator=(const Publication& P) {
+        if (this != &P) {
+            if (m_title != nullptr) {
+                delete[] m_title;
+                m_title = nullptr;
             }
-            std::strcpy(m_shelfId, other.m_shelfId);
-            m_membership = other.m_membership;
-            m_libRef = other.m_libRef;
-            m_date = other.m_date;
+
+            if (P.m_title != nullptr && P.m_title[0] != '\0') {
+                m_title = new char[strlen(P.m_title) + 1];
+                strcpy(m_title, P.m_title);
+            }
+            strcpy(m_shelfId, P.m_shelfId);
+            m_membership = P.m_membership;
+            m_libRef = P.m_libRef;
+            m_date = P.m_date;
         }
         return *this;
     }
+    Publication::~Publication() {
+        if (m_title != nullptr) {
+            delete[] m_title;
+            m_title = nullptr;
+        }
+    }
+
     void Publication::set(int member_id) {
-        m_membership = member_id;
+        if ((member_id < 99999 && member_id >9999) || member_id == 0) {
+            m_membership = member_id;
+        }
     }
 
     void Publication::setRef(int value) {
@@ -55,7 +67,7 @@ namespace seneca {
     }
 
     void Publication::resetDate() {
-        m_date.setToToday();
+        m_date = Date();
     }
 
     char Publication::type() const {
@@ -63,7 +75,7 @@ namespace seneca {
     }
 
     bool Publication::onLoan() const {
-        return m_membership != 0;
+        return (m_membership != 0);
     }
 
     Date Publication::checkoutDate() const {
@@ -71,95 +83,132 @@ namespace seneca {
     }
 
     bool Publication::operator==(const char* title) const {
-        return std::strstr(m_title, title) != nullptr;
+        return strstr(m_title, title) != nullptr;
     }
 
     Publication::operator const char* () const {
         return m_title;
     }
-
     int Publication::getRef() const {
         return m_libRef;
     }
+
     bool Publication::conIO(std::ios& io) const {
-        return &io == &std::cin || &io == &std::cout;
+        return (&cin == &io) || (&cout == &io);
     }
 
     std::ostream& Publication::write(std::ostream& os) const {
+        if (!(*this) || !m_date)
+            return os;
         if (conIO(os)) {
-            os << "| " << m_shelfId << " | ";
+            os << "| " << setw(SENECA_SHELF_ID_LEN)
+                << m_shelfId
+                << " | ";
 
-            // Check if the title length exceeds SENECA_TITLE_WIDTH
-            if (std::strlen(m_title) > SENECA_TITLE_WIDTH) {
-                // Create a temporary buffer to hold the truncated title
-                char tempTitle[SENECA_TITLE_WIDTH + 1];
-                std::strncpy(tempTitle, m_title, SENECA_TITLE_WIDTH);
-                tempTitle[SENECA_TITLE_WIDTH] = '\0'; // Null-terminate the string
-
-                os << std::left << std::setw(SENECA_TITLE_WIDTH) << std::setfill('.') << tempTitle;
-            } else {
-                os << std::left << std::setw(SENECA_TITLE_WIDTH) << std::setfill('.') << m_title;
+            if (strlen(m_title) > SENECA_TITLE_WIDTH) {
+                os.write(m_title, SENECA_TITLE_WIDTH);
             }
+            else {
+                os << setw(SENECA_TITLE_WIDTH) << left << setfill('.');
+                os << m_title;
+            }
+            os << right << setfill(' ');
 
-            os << " | " << std::setw(5) << std::setfill(' ') << (m_membership != 0 ? intToString(m_membership).c_str() : " N/A")
-                << " | " << m_date << " |";
-        } else {
-            os << type() << '\t' << m_libRef << '\t' << m_shelfId << '\t'
-                << m_title << '\t' << m_membership << '\t' << m_date;
+            os << " | ";
+
+            onLoan() ? os << m_membership : os << " N/A ";
+            os << " | "
+                << m_date
+                << " |";
+        }
+        else {
+            os << type() << '\t' << m_libRef << '\t' << m_shelfId << '\t' << m_title << '\t' << m_membership << '\t' << m_date;
         }
         return os;
     }
-
-    std::istream& Publication::read(std::istream& is) {
-        char title[256]{}, shelfId[SENECA_SHELF_ID_LEN + 1]{};
-        int membership{}, libRef{};
-        Date date;
-
+    std::istream& Publication::read(std::istream& istr) {
         delete[] m_title;
         m_title = nullptr;
+        m_shelfId[0] = '\0';
+        m_membership = 0;
+        m_libRef = -1;
+        m_date = Date();
 
-        if (conIO(is)) {
-            std::cout << "Shelf No: ";
-            is.getline(shelfId, SENECA_SHELF_ID_LEN + 1);
-            if (std::strlen(shelfId) != SENECA_SHELF_ID_LEN) {
-                is.setstate(std::ios::failbit);
+        char titleTmp[256]{};
+
+        char shelfTmp[SENECA_SHELF_ID_LEN + 1]{};
+        int membershipTmp = 0;
+        int libRefTmp = -1;
+        Date dateTmp;
+
+        if (conIO(istr)) {
+            cout << "Shelf No: ";
+            istr >> shelfTmp;
+            if (strlen(shelfTmp) != SENECA_SHELF_ID_LEN) {
+                istr.setstate(std::ios::failbit);
             }
             else {
-                std::cout << "Title: ";
-                is.getline(title, 256);
-                std::cout << "Date: ";
-                is >> date;
+                istr.ignore();
+            }
+            cout << "Title: ";
+            if (!istr.fail()) {
+                istr.getline(titleTmp, 256, '\n');
+            }
+            cout << "Date: ";
+            if (!istr.fail()) {
+                istr >> dateTmp;
+                if (!dateTmp) {
+                    istr.setstate(std::ios::failbit);
+                }
             }
         }
         else {
-            is >> libRef;
-            is.ignore();
-            is.getline(shelfId, SENECA_SHELF_ID_LEN + 1, '\t');
-            is.getline(title, 256, '\t');
-            is >> membership;
-            is.ignore();
-            is >> date;
-        }
+            istr >> libRefTmp;
+            istr.ignore();
+            istr.getline(shelfTmp, SENECA_SHELF_ID_LEN + 1, '\t');
+            istr.getline(titleTmp, 256, '\t');
+            istr >> membershipTmp;
+            istr.ignore();
 
-        if (date.errCode() != NO_ERROR) {
-            is.setstate(std::ios::failbit);
+            istr >> dateTmp;
+            if (!dateTmp)
+                istr.setstate(std::ios::failbit);
         }
-        else if (is) {
-            if (title[0] != '\0') 
-            {
-                m_title = new char[std::strlen(title) + 1];
-                std::strcpy(m_title, title);
+        if (!istr.fail()) {
+            if (titleTmp[0] != '\0') {
+                delete m_title;
+                m_title = nullptr;
+                m_title = new char[strlen(titleTmp) + 1];
+                strcpy(m_title, titleTmp);
             }
-            std::strcpy(m_shelfId, shelfId);
-            m_membership = membership;
-            m_date = date;
-            m_libRef = libRef;
+            if (shelfTmp[0] != '\0') {
+                strcpy(m_shelfId, shelfTmp);
+            }
+            m_membership = membershipTmp;
+            m_libRef = libRefTmp;
+            m_date = dateTmp;
         }
-
-        return is;
+        return istr;
     }
 
     Publication::operator bool() const {
         return m_title != nullptr && m_shelfId[0] != '\0';
     }
+
+    ostream& Publication::operator<<(ostream& os) {
+        return write(os);
+    }
+
+    istream& Publication::operator>>(istream& is) {
+        return read(is);
+    }
+
+
+    ostream& operator<<(ostream& os, const Publication& right) {
+        return right.write(os);
+    }
+    istream& operator>>(istream& is, Publication& right) {
+        return right.read(is);
+    }
 }
+
