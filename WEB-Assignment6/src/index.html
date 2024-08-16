@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="renan" content="Renan-Queiroz" />
+
+    <title>WEB222 Store</title>
+    <link rel="stylesheet" href="./css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="./css/sakura.css" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <h1>Drop Shot Tennis Store</h1>
+      <p>Our products are always an ace</p>
+    </header>
+
+    <nav id="menu">
+      <!-- Dynamically create your menu category buttons here -->
+    </nav>
+
+    <!-- Container for product cards -->
+    <div id="main-content"></div>
+    <!-- Form Newsletter-->
+    <form class="form-newsletter" id="myForm">
+      <h1>Newsletter Sign-Up</h1>
+      <p>
+        Be the first to know about upcoming sale events, product launches,
+        exclusive deals and promotions.
+      </p>
+      <div class="form-email">
+        <label for="exampleInputEmail1" class="form-label"
+          >Email address:</label
+        >
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          name="email"
+          required
+        />
+        <div id="emailHelp" class="form-text">
+          We'll never share your email with anyone else.
+        </div>
+      </div>
+      <div class="form-name">
+        <label for="name">Enter your name: </label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <button type="submit" class="btn btn-primary">Sign-Up</button>
+    </form>
+    <!--Suggest new product-->
+    <h1>
+      <a href="/src/newprod.html"
+        >Can’t find what you’re looking for? Suggest a product, and we’ll do our
+        best to include it.</a
+      >
+    </h1>
+
+    <!-- JavaScript Data Files -->
+    <script src="./js/categories.js"></script>
+    <script src="./js/products.js"></script>
+
+    <!-- Main App JavaScript File -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>
