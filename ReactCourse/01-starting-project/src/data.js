@@ -34,17 +34,21 @@ export const MY_FAMILY = [
   {
     name: "Renan",
     age: 28,
+    favFood: "Hamburguer"
   },
   {
     name: "Geisiane",
     age: 28,
+    favFood: "Sushi"
   },
   {
     name: "Emma",
     age: 9,
+    favFood: "Banana"
   },
   {
     name: "Lola",
     age: 8,
+    favFood: "Chicken"
   }
 ];
