@@ -30,25 +30,25 @@ export const CORE_CONCEPTS = [
   },
 ];
 
-export const MY_FAMILY = [
-  {
+export const MY_FAMILY = {
+  Renan: {
     name: "Renan",
     age: 28,
     favFood: "Hamburguer"
   },
-  {
+  Geisiane:{
     name: "Geisiane",
     age: 28,
     favFood: "Sushi"
   },
-  {
+  Emma:{
     name: "Emma",
     age: 9,
     favFood: "Banana"
   },
-  {
+  Lola:{
     name: "Lola",
     age: 8,
     favFood: "Chicken"
   }
-];
+};
