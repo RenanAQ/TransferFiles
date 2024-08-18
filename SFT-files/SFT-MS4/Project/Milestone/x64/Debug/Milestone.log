@@ -1,8 +1,0 @@
-﻿  main.c
-  management.c
-  mapping.c
-  Generating Code...
-C:\Users\Geisiane Pires\Downloads\MS4-github\summer24-sft221-naa-2\SourceCode\Project\Milestone\management.c(71,1): warning C4716: 'isVolumeExceed': must return a value
-C:\Users\Geisiane Pires\Downloads\MS4-github\summer24-sft221-naa-2\SourceCode\Project\Milestone\management.c(75,1): warning C4716: 'findNearestTruck': must return a value
-C:\Users\Geisiane Pires\Downloads\MS4-github\summer24-sft221-naa-2\SourceCode\Project\Milestone\management.c(67,1): warning C4716: 'isWeightExceed': must return a value
-  Milestone.vcxproj -> C:\Users\Geisiane Pires\Downloads\MS4-github\summer24-sft221-naa-2\SourceCode\Project\x64\Debug\Milestone.exe

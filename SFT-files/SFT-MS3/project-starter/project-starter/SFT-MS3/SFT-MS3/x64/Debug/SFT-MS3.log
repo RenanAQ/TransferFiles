@@ -1,5 +1,0 @@
-﻿  main.c
-  mapping.c
-  Generating Code...
-C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\SFT-MS3\project-starter\project-starter\main.c(15,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
-C:\Users\Geisiane Pires\Documents\03. RENAN\TransferFiles-Github\TransferFiles\SFT-MS3\project-starter\project-starter\mapping.c(290,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
