@@ -5,7 +5,7 @@ export default function Player({ initialName, symbol }) {
     const [isEditing, setIsEditing] = useState(false);
 
   //function to handle the button clicked
-  function handleEditClicl() {
+  function handleEditClick() {
     setIsEditing((editing)=>!editing); //best practice
   }
   function handleChange(m_event){ //listener
@@ -26,7 +26,7 @@ export default function Player({ initialName, symbol }) {
         {editablePlayerName}
         <span className="player-symbol">{symbol}</span>
       </span>
-      <button onClick={handleEditClicl}>{btnCaption}</button>
+      <button onClick={handleEditClick}>{btnCaption}</button>
     </li>
   );
 }
