@@ -11,8 +11,12 @@ function App() {
     duration: 10,
   });
 
-  userInput.annualInvest
-
+  console.log("Debuging:")
+  console.log(`initial: ${userInput.initialInvest}`)
+  console.log(`annual: ${userInput.annualInvest}`)
+  console.log(`expected: ${userInput.expectedReturn}`)
+  console.log(`duration: ${userInput.duration}`)
+  
   const inputIsValid = userInput.duration >= 1;
 
   function handleUserInput(inputID, newValue) {
@@ -25,7 +29,7 @@ function App() {
   }
   return (
     <>
-      <Header m_userInput={userInput} m_onChangeInput={handleUserInput} />
+      <Header userInput={userInput} onChange={handleUserInput} />
       {!inputIsValid && (
         <p className="center">Duration must be greater than zero</p>
       )}
@@ -33,5 +37,4 @@ function App() {
     </>
   );
 }
-
 export default App;

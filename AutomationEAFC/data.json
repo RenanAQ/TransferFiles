@@ -7,11 +7,11 @@
         {"Position": 5, "Club": "Spurs", "P": 38, "W": 20, "D": 6, "L": 12, "GF": 74, "GA": 61, "GD": 13, "PTS": 66},
         {"Position": 6, "Club": "Chelsea", "P": 38, "W": 19, "D": 11, "L": 8, "GF": 77, "GA": 63, "GD": 14, "PTS": 68},
         {"Position": 7, "Club": "Newcastle Utd", "P": 38, "W": 14, "D": 14, "L": 10, "GF": 61, "GA": 55, "GD": 6, "PTS": 56},
-        {"Position": 8, "Club": "Manchester Utd", "P": 38, "W": 17, "D": 9, "L": 12, "GF": 57, "GA": 62, "GD": -5, "PTS": 60},
+        {"Position": 8, "Club": "Man Utd", "P": 38, "W": 17, "D": 9, "L": 12, "GF": 57, "GA": 62, "GD": -5, "PTS": 60},
         {"Position": 9, "Club": "West Ham", "P": 38, "W": 14, "D": 10, "L": 14, "GF": 51, "GA": 54, "GD": -3, "PTS": 52},
         {"Position": 10, "Club": "Crystal Palace", "P": 38, "W": 11, "D": 10, "L": 17, "GF": 51, "GA": 57, "GD": -6, "PTS": 48},
         {"Position": 11, "Club": "Brighton", "P": 38, "W": 13, "D": 9, "L": 16, "GF": 53, "GA": 63, "GD": -10, "PTS": 48},
-        {"Position": 12, "Club": "Bournemouth", "P": 38, "W": 13, "D": 9, "L": 16, "GF": 55, "GA": 65, "GD": -10, "PTS": 48},
+        {"Position": 12, "Club": "AFC Bournemouth", "P": 38, "W": 13, "D": 9, "L": 16, "GF": 55, "GA": 65, "GD": -10, "PTS": 48},
         {"Position": 13, "Club": "Fulham", "P": 38, "W": 12, "D": 11, "L": 15, "GF": 52, "GA": 61, "GD": -9, "PTS": 47},
         {"Position": 14, "Club": "Wolves", "P": 38, "W": 13, "D": 7, "L": 18, "GF": 49, "GA": 61, "GD": -12, "PTS": 46},
         {"Position": 15, "Club": "Everton", "P": 38, "W": 11, "D": 10, "L": 17, "GF": 45, "GA": 61, "GD": -16, "PTS": 43},
@@ -21,7 +21,7 @@
         {"Position": 19, "Club": "Burnley", "P": 38, "W": 7, "D": 8, "L": 23, "GF": 40, "GA": 76, "GD": -36, "PTS": 29},
         {"Position": 20, "Club": "Sheffield Utd", "P": 38, "W": 8, "D": 4, "L": 26, "GF": 38, "GA": 75, "GD": -37, "PTS": 28}
       ],
-    "Table1": [
+    "Table 1": [
       {"Position":1,"Team":"Manchester City","P":38,"W":28,"D":7,"L":3,"GF":82,"GA":35,"GD":47,"PTS":91},
       {"Position":2,"Team":"Spurs","P":38,"W":26,"D":7,"L":5,"GF":73,"GA":42,"GD":31,"PTS":85},
       {"Position":3,"Team":"Liverpool","P":38,"W":24,"D":8,"L":6,"GF":84,"GA":45,"GD":39,"PTS":78},
@@ -43,7 +43,7 @@
       {"Position":19,"Team":"Luton Town","P":38,"W":6,"D":8,"L":24,"GF":38,"GA":71,"GD":-33,"PTS":26},
       {"Position":20,"Team":"Sheffield Utd","P":38,"W":2,"D":7,"L":29,"GF":29,"GA":85,"GD":-47,"PTS":13}
     ],
-    "Table2": [
+    "Table 2": [
       {"Position":1,"Team":"Arsenal","P":38,"W":24,"D":10,"L":4,"GF":81,"GA":37,"GD":44,"PTS":82},
       {"Position":2,"Team":"Manchester City","P":38,"W":23,"D":10,"L":5,"GF":86,"GA":49,"GD":37,"PTS":79},
       {"Position":3,"Team":"Liverpool","P":38,"W":22,"D":12,"L":4,"GF":78,"GA":41,"GD":37,"PTS":78},
