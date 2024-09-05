@@ -6,18 +6,18 @@ export default function Header({ onChange, userInput }) {
         <label>Initial Investment</label>
         <input
           type="number"
-          value={userInput.initialInvest}
+          value={userInput.initialInvestment}
           onChange={(event) =>
-            onChange("initialInvest", event.target.value)
+            onChange("initialInvestment", event.target.value)
           }
           required
         ></input>
         <label>Annual Investment</label>
         <input
           type="number"
-          value={userInput.annualInvest}
+          value={userInput.annualInvestment}
           onChange={(event) =>
-            onChange("annualInvest", event.target.value)
+            onChange("annualInvestment", event.target.value)
           }
           required
         ></input>
