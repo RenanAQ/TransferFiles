@@ -1,21 +1,20 @@
-import { useState } from "react";
-import "./App.css";
-import { DisplayList } from "./DisplayList";
-import InputControl from "./InputControl";
+import React, { useState } from 'react';
+import InputControl from './components/InputControl';
+import DisplayList from './components/DisplayList';
 
-function App() {
-  const [count, setCount] = useState(0);
+const App = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+   };
   return (
-    <>
-      <h1>Market List</h1>
-
-      <div>
-        <InputControl />
-        <DisplayList category={category} />
-      </div>
-    </>
+    <div>
+      <InputControl onCategoryChange={handleCategoryChange} />
+      <p>Selected Category: {selectedCategory}</p>
+      <DisplayList category={selectedCategory} />
+    </div>
   );
-}
+};
 
 export default App;
