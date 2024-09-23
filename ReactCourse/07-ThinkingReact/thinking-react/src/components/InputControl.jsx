@@ -7,13 +7,15 @@ const InputControl = ({ onCategoryChange }) => {
 
   return (
     <div>
+      <input type="text" placeholder="Search..." id='input-search'></input>
+      <input type='checkbox' onChange={handleChange}></input>
       <label>
-        Select Category:
-        <select onChange={handleChange}>
+        Only show products in stock
+        {/* <select onChange={handleChange}>
         <option value="All">All</option>
           <option value="Fruits">Fruits</option>
           <option value="Vegetables">Vegetables</option>
-        </select>
+        </select> */}
       </label>
     </div>
   );

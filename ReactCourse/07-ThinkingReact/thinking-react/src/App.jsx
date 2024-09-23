@@ -8,10 +8,10 @@ const App = () => {
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
    };
+  //  console.log('setSelectedCategory', selectedCategory);
   return (
     <div>
       <InputControl onCategoryChange={handleCategoryChange} />
-      <p>Selected Category: {selectedCategory}</p>
       <DisplayList category={selectedCategory} />
     </div>
   );

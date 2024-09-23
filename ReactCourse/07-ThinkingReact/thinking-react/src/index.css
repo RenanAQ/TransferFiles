@@ -66,3 +66,17 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+#input-search {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#fruits-category, #vegetables-category {
+  justify-content: center;
+  display: grid;
+}
+#table-head {
+  text-align: center;
+}
