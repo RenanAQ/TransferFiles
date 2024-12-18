@@ -1,0 +1,6 @@
+npm nodemon: restarts automatically the app when changes
+flags:
+--save: production dependancy
+-dev: for development
+-g: global. Use anywhere
+
