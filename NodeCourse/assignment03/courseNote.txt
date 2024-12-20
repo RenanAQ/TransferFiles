@@ -1,0 +1,57 @@
+When you ran:
+
+npx nodemon app.js
+
+it worked because npx is a tool that comes with npm (version 5.2.0 and later). npx allows you to execute Node.js binaries (like nodemon) directly, even if they are not globally installed. Here’s why this worked:
+
+1. npx Looks for Local Installations
+	•	When you run npx nodemon app.js, npx checks your local node_modules for nodemon first.
+	•	If nodemon exists in your project as a local dependency (node_modules/.bin/nodemon), it runs it without needing a global installation.
+
+2. No Global Installation Needed
+
+When you tried to install nodemon globally with npm install -g nodemon, you encountered a permission issue (EACCES). That blocked the global installation in /usr/local/lib.
+
+npx, on the other hand:
+	•	Does not need nodemon to be globally installed.
+	•	Automatically downloads and runs nodemon temporarily if it doesn’t exist locally.
+
+This is why npx worked flawlessly.
+
+Why This Is Useful
+
+Using npx is a great way to:
+	•	Avoid permission issues with global installations.
+	•	Run tools without polluting your system with unnecessary global installations.
+
+Long-Term Solution
+
+If you want to avoid typing npx every time, you can:
+	1.	Install nodemon Locally (as a development dependency):
+
+npm install --save-dev nodemon
+
+
+	2.	Update your package.json scripts to include nodemon. For example:
+
+"scripts": {
+  "start": "nodemon app.js"
+}
+
+
+	3.	Run it using:
+
+npm start
+
+
+
+This approach avoids global installations entirely and keeps everything project-specific.
+
+Let me know if you need help with any of these steps! 😊
+
+//middleware 1 -- THE ORDER MATTERS. 1 will only execute if it comes before 2 because of the path: '/'
+router.use('/add-product',(req, res, next)=>{
+    console.log('In the middleware 1');
+    res.send('<form action="/product" method="POST"><input type="text" name="m_title"><button type="submit">Add m_Product</button></form>')
+    // next(); //this allows the request to continue to the next middleware if we do not have a response
+});
