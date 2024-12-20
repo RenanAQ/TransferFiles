@@ -2,3 +2,4 @@ npm init
 npm i nodemon
 npm i express
 npm i --save ejs pug express-handlebars
+npm i --save express-handlebars@3.0
