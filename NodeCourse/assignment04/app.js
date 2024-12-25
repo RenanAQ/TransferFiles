@@ -13,7 +13,7 @@ const m_shopRoutes = require("./routes/shop")
 app.use(bodyParser.urlencoded({ extended: false })); //parsing body
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/admin', m_adminRoutes.routes);
+app.use('/admin', m_adminRoutes);
 app.use(m_shopRoutes);
 
 //error handler
