@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require('path')
+const errorController = require('./controllers/404');
 const app = express();
 
 
@@ -17,8 +18,6 @@ app.use('/admin', m_adminRoutes);
 app.use(m_shopRoutes);
 
 //error handler
-app.use((req, res, next)=>{
-    res.status(404).render('404', { m_pageTitle: 'Page not Found'})
-})
+app.use(errorController.get404);
 
 app.listen(3000);
