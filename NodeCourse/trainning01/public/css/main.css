@@ -1,0 +1,9 @@
+body{
+    background-color: black;
+    color: aliceblue;
+    padding: 5px;
+}
+.shapes-control{
+    display: grid;
+    padding: 5px;
+}
