@@ -2,8 +2,13 @@ body{
     background-color: black;
     color: aliceblue;
     padding: 5px;
+    font-size: 20px;
 }
 .shapes-control{
     display: grid;
     padding: 5px;
+    width: 50%;
+}
+.submit-control{
+    font-size: 20px;
 }

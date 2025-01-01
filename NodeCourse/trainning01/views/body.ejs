@@ -2,31 +2,25 @@
 </head>
 <body>
     <main>
-        <form class="shape-form" action="" method="POST">
+        <form class="shape-form" action="/submit" method="POST">
             <div class="form-control">
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title">
                 
                 <img class="shapes-control" src="https://cdn.mathblog.com/wp-content/uploads/2017/03/3-13.gif"/>
-                <fieldset>
-                    <legend>Select the shape you want to calculate</legend>
-                    <label><input class="options-control" type="radio" name="radio" value="Square"/>Square</label>
-                    <label><input class="options-control" type="radio" name="radio" value="Triangle"/>Triangle</label>
-                    <label><input class="options-control" type="radio" name="radio" value="Rectangle"/>Rectangle</label>
-                    <label><input class="options-control" type="radio" name="radio" value="Circle"/>Circle</label>
-                    <label><input class="options-control" type="radio" name="radio" value="Parallelogram"/>Parallelogram</label>
-                    <label><input class="options-control" type="radio" name="radio" value="Trapezoid"/>Trapezoid</label>
-                </fieldset>
+                
+                <label for="shape">Select the shape you want to calculate</label>
+                <select name="shape" id="shape"onchange="showSelectedShape(this.value)">
+                    <option value="">--Choose an option--</option>
+                    <option value="Square">Square</option>
+                    <option value="Triangle">Triangle</option>
+                    <option value="Rectangle">Rectangle</option>
+                    <option value="Circle">Circle</option>
+                    <option value="Parallelogram">Parallelogram</option>
+                    <option value="Trapezoid">Trapezoid</option>
+                </select>    
             </div>
-            <div class="input-control">
-                <label> Enter a number</label>
-                <input type="number" name="length" value="length"/>
-                <% if(value=="Square"){ %>
-                    <h1>Square selected</h1>
-                <% } %>
-            </div>
-
-            <button type="submit">Calculate area</button>
+            <button class="submit-control"type="submit">Calculate area</button>
         </form>
     </main>
 <%- include('includes/end.ejs') %>

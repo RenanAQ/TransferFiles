@@ -4,14 +4,18 @@ const app = express();
 const port = 3000;
 
 //header for ejs
-const ejs = require("ejs");
+// const ejs = require("ejs");
 app.set("view engine", "ejs");
 
 //middleware form
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.render("body", { m_pageTitle: "Area Calc", value:"" });
+  res.render("body", { m_pageTitle: "Area Calc"});
+});
+
+app.post("/submit", (req, res)=>{
+  res.send(req.body)
 });
 
 //resource folder
