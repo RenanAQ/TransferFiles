@@ -4,7 +4,6 @@ const app = express();
 const port = 3000;
 
 //header for ejs
-// const ejs = require("ejs");
 app.set("view engine", "ejs");
 
 //middleware form
@@ -14,9 +13,8 @@ app.get("/", (req, res) => {
   res.render("body", { m_pageTitle: "Area Calc"});
 });
 
-app.post("/submit", (req, res)=>{
-  res.send(req.body)
-});
+const calcControl = require('./controller/calculation');
+app.use("/submit", calcControl);
 
 //resource folder
 app.use(express.static("public"));
