@@ -1,22 +1,30 @@
 body{
-    background-color: black;
+    background-color: #777;
     color: aliceblue;
     padding: 5px;
     font-size: 15px;
+    margin: 2px;
 }
 .shapes-control{
     display: grid;
     padding: 5px;
     width: 50%;
+    font-size: 1.5rem;
 }
 .submit-control{
     font-size: 20px;
 }
 .nav-control{
     background-color: aqua;
+    margin: 10px
 }
-.input-control{
-    display: flex;
+.input-control-1 {
+    border: 2px dotted blue;
+    margin: 5px;
+}
+.input-control-2{
+    padding: 5px;
+    border: 10px;
 }
 .results-control{
     font-variant-numeric: slashed-zero;

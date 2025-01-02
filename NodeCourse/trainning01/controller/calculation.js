@@ -1,22 +1,36 @@
 calculations = (req, res) => {
   let m_area; //scoping problem
   const shapeSelected = req.body.shape;
-  const value1 = req.body.value1;
-  const value2 = req.body.value2;
-  const value3 = req.body.value3;
+  
   switch (shapeSelected) {
     case "Square":
+        const side = parseFloat(req.body.side);
+        m_area = side * side;
+      break;
     case "Parallelogram":
-      m_area = value1 * value2;
-      break;
+        const baseP = parseFloat(req.body.base);
+        const heightP = parseFloat(req.body.height);
+        m_area = (baseP * heightP);
+        break;
     case "Circle":
-      m_area = value1 * value1 * 3.1415;
-      break;
+        const radius = parseFloat(req.body.radius);
+        m_area = radius * radius * 3.1415;
+        break;
     case "Triangle":
-      m_area = (value1 * value2) / 2;
-      break;
+        const base = parseFloat(req.body.base);
+        const height = parseFloat(req.body.height);
+        m_area = (base * height) / 2;
+        break;
     case "Trapezoid":
-        m_area = (value1+value2)*value3/2;
+        const base1 = parseFloat(req.body.base1);
+        const base2 = parseFloat(req.body.base2);
+        const height1 = parseFloat(req.body.height);
+        m_area = (base1 + base2) * height1 / 2;
+        break;
+    case "Rectangle":
+        const length = parseFloat(req.body.length);
+        const width = parseFloat(req.body.width);
+        m_area = length * width;
         break;
     default:
       m_area = "Still learning";
@@ -27,9 +41,6 @@ calculations = (req, res) => {
     m_pageTitle: "Calc Result",
     m_title: req.body.title,
     m_shape: shapeSelected,
-    m_value1: value1,
-    m_value2: value2,
-    m_value3: value3,
     m_area: m_area,
   });
 };

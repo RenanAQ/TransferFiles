@@ -10,7 +10,7 @@
                 <img class="shapes-control" src="https://cdn.mathblog.com/wp-content/uploads/2017/03/3-13.gif"/>
                 
                 <label for="shape">Select the shape you want to calculate</label>
-                <select name="shape">
+                <select name="shape" id="shape" onchange="showShapeFields(this.value)">
                     <option value="">--Choose an option--</option>
                     <option value="Square">Square</option>
                     <option value="Triangle">Triangle</option>
@@ -19,15 +19,14 @@
                     <option value="Parallelogram">Parallelogram</option>
                     <option value="Trapezoid">Trapezoid</option>
                 </select>
-                <div class="input-control">
-                    <label for="value1">Enter dimension 1</label>    
-                    <input type="number" step="0.01" name="value1">
-                    <label for="value2">Enter dimension 2</label>    
-                    <input type="number" step="0.01" name="value2">
+                <div class="input-control-1">
+                    <!-- Container for the input fields -->
+                    <div id="fieldsContainer" class="input-control-2"></div>
                 </div>
                 
             </div>
             <button class="submit-control"type="submit">Calculate area</button>
         </form>
     </main>
+<script src="/js/form.js"></script>
 <%- include('includes/end.ejs') %>
